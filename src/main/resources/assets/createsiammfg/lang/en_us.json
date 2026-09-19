@@ -1,13 +1,4 @@
 {
-  "itemGroup.createsiammfg": "Example Mod Tab",
-  "block.createsiammfg.example_block": "Example Block",
-  "item.createsiammfg.example_item": "Example Item",
-
-  "createsiammfg.configuration.title": "Create Siam Manufacturing Configs",
-  "createsiammfg.configuration.section.createsiammfg.common.toml": "Create Siam Manufacturing Configs",
-  "createsiammfg.configuration.section.createsiammfg.common.toml.title": "Create Siam Manufacturing Configs",
-  "createsiammfg.configuration.items": "Item List",
-  "createsiammfg.configuration.logDirtBlock": "Log Dirt Block",
-  "createsiammfg.configuration.magicNumberIntroduction": "Magic Number Text",
-  "createsiammfg.configuration.magicNumber": "Magic Number"
+  "itemGroup.createsiammfg.mod_tab": "Create Siam Manufacturing",
+  "item.createsiammfg.blade_head": "blade head"
 }
