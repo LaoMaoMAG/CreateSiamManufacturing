@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 /**
  * CSM 物品注册表
  */
-public class ModItems {
+public class CSMItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateSiamManufacturing.MOD_ID);
 
     /** 刀头 */

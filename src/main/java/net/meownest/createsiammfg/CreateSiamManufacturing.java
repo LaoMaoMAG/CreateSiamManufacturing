@@ -1,16 +1,13 @@
 package net.meownest.createsiammfg;
 
-import net.meownest.createsiammfg.registry.ModCreativeModeTab;
-import net.meownest.createsiammfg.registry.item.ModItems;
+import net.meownest.createsiammfg.registry.CSMCreativeModeTab;
+import net.meownest.createsiammfg.registry.item.CSMItems;
 
 import com.mojang.logging.LogUtils;
 
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.neoforge.common.NeoForge;
 
 import org.slf4j.Logger;
 
@@ -37,7 +34,7 @@ public class CreateSiamManufacturing {
      */
     public CreateSiamManufacturing(IEventBus modEventBus, ModContainer modContainer) {
         // 内容注册部分
-        ModItems.register(modEventBus); // 注册物品
-        ModCreativeModeTab.register(modEventBus); // 注册创造模式标签
+        CSMItems.register(modEventBus); // 注册物品
+        CSMCreativeModeTab.register(modEventBus); // 注册创造模式标签
     }
 }

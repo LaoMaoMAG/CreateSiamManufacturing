@@ -1,4 +1,4 @@
 package net.meownest.createsiammfg.registry.block;
 
-public class ModBlocks {
+public class CSMBlocks {
 }

@@ -1,6 +1,6 @@
 package net.meownest.createsiammfg.registry;
 
-import net.meownest.createsiammfg.registry.item.ModItems;
+import net.meownest.createsiammfg.registry.item.CSMItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static net.meownest.createsiammfg.CreateSiamManufacturing.MOD_ID;
 
-public class ModCreativeModeTab {
+public class CSMCreativeModeTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
     /**
@@ -22,9 +22,9 @@ public class ModCreativeModeTab {
             CREATIVE_MODE_TABS.register("mod_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + MOD_ID + ".mod_tab"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
-                    .icon(() -> ModItems.BLADE_HEAD.get().getDefaultInstance())
+                    .icon(() -> CSMItems.BLADE_HEAD.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
-                        output.accept(ModItems.BLADE_HEAD.get());
+                        output.accept(CSMItems.BLADE_HEAD.get());
                     }).build());
 
     /**
