@@ -25,6 +25,9 @@ public class CSMCreativeModeTab {
                     .icon(() -> CSMItems.BLADE_HEAD.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
                         output.accept(CSMItems.BLADE_HEAD.get());
+                        output.accept(CSMItems.SOLDERING_IRON.get());
+                        output.accept(CSMItems.HOT_SOLDERING_IRON.get());
+                        output.accept(CSMItems.ELECTRIC_SOLDERING_IRON.get());
                     }).build());
 
     /**

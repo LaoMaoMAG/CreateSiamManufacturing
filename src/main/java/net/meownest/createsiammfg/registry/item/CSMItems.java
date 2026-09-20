@@ -13,11 +13,29 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class CSMItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateSiamManufacturing.MOD_ID);
 
-    /** 刀头 */
-    @SuppressWarnings("unused")
+    /**
+     * 刀头
+     */
     public static final DeferredItem<Item> BLADE_HEAD = ITEMS.registerSimpleItem("blade_head");
 
-    /** 物品注册 */
+    /**
+     * 烙铁
+     */
+    public static final DeferredItem<Item> SOLDERING_IRON = ITEMS.registerSimpleItem("soldering_iron");
+
+    /**
+     * 热烙铁
+     */
+    public static final DeferredItem<Item> HOT_SOLDERING_IRON = ITEMS.registerSimpleItem("hot_soldering_iron");
+
+    /**
+     * 电烙铁
+     */
+    public static final DeferredItem<Item> ELECTRIC_SOLDERING_IRON = ITEMS.registerSimpleItem("electric_soldering_iron");
+
+    /**
+     * 物品注册
+     */
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -1,4 +1,7 @@
 {
   "itemGroup.createsiammfg.mod_tab": "机械动力：暹罗制造",
-  "item.createsiammfg.blade_head": "刀头"
+  "item.createsiammfg.blade_head": "刀头",
+  "item.createsiammfg.soldering_iron": "烙铁",
+  "item.createsiammfg.hot_soldering_iron": "热烙铁",
+  "item.createsiammfg.electric_soldering_iron": "电烙铁"
 }
