@@ -1,7 +1,6 @@
 package net.meownest.createsiammfg;
 
-import net.meownest.createsiammfg.registry.CSMCreativeModeTab;
-import net.meownest.createsiammfg.registry.item.CSMItems;
+import net.meownest.createsiammfg.registry.CSMRegistrate;
 
 import com.mojang.logging.LogUtils;
 
@@ -33,8 +32,6 @@ public class CreateSiamManufacturing {
      * @param modContainer 模组容器
      */
     public CreateSiamManufacturing(IEventBus modEventBus, ModContainer modContainer) {
-        // 内容注册部分
-        CSMItems.register(modEventBus); // 注册物品
-        CSMCreativeModeTab.register(modEventBus); // 注册创造模式标签
+        CSMRegistrate.register(modEventBus);
     }
 }
