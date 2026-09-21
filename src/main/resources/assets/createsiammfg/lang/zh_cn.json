@@ -3,5 +3,6 @@
   "item.createsiammfg.blade_head": "刀头",
   "item.createsiammfg.soldering_iron": "烙铁",
   "item.createsiammfg.hot_soldering_iron": "热烙铁",
-  "item.createsiammfg.electric_soldering_iron": "电烙铁"
+  "item.createsiammfg.electric_soldering_iron": "电烙铁",
+  "item.createsiammfg.advanced_soldering_iron": "电烙铁 Pro MAX"
 }

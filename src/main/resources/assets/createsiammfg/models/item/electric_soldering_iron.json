@@ -1,3 +1,6 @@
 {
-  "parent": "createsiammfg:item/electric_soldering_iron/item"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createsiammfg:item/electric_soldering_iron"
+  }
 }

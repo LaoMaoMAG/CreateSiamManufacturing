@@ -33,6 +33,12 @@ public class CSMItems {
      */
     public static final DeferredItem<Item> ELECTRIC_SOLDERING_IRON = ITEMS.registerSimpleItem("electric_soldering_iron");
 
+
+    /**
+     * 高级电烙铁
+     */
+    public static final DeferredItem<Item> ADVANCED_SOLDERING_IRON = ITEMS.registerSimpleItem("advanced_soldering_iron");
+
     /**
      * 物品注册
      */

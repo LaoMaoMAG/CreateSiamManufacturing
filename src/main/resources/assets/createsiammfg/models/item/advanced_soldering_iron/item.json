@@ -2,8 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "createsiammfg:item/electric_soldering_iron/model",
-		"particle": "createsiammfg:item/electric_soldering_iron/model"
+		"0": "createsiammfg:item/advanced_soldering_iron",
+		"particle": "createsiammfg:item/advanced_soldering_iron"
 	},
 	"elements": [
 		{
