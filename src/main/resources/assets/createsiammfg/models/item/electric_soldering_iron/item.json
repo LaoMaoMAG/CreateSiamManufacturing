@@ -1,0 +1,25 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "createsiammfg:item/electric_soldering_iron",
+		"particle": "createsiammfg:item/electric_soldering_iron"
+	},
+	"elements": [
+		{
+			"name": "handle",
+			"from": [7.25, 0, 7.25],
+			"to": [8.75, 6, 8.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 8]},
+			"faces": {
+				"north": {"uv": [10, 10, 11.5, 12], "texture": "#0"},
+				"east": {"uv": [11.5, 11, 13, 14], "texture": "#0"},
+				"south": {"uv": [11, 11, 11.5, 14], "texture": "#0"},
+				"west": {"uv": [11, 11, 12.5, 14], "texture": "#0"},
+				"up": {"uv": [11, 12, 12.5, 13.5], "texture": "#0"},
+				"down": {"uv": [12, 12.5, 13.5, 14], "texture": "#0"}
+			}
+		}
+	],
+	"display": {}
+}
