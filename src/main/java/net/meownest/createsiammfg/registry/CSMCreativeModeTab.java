@@ -29,6 +29,7 @@ public class CSMCreativeModeTab {
                         output.accept(CSMItems.HOT_SOLDERING_IRON.get());
                         output.accept(CSMItems.ELECTRIC_SOLDERING_IRON.get());
                         output.accept(CSMItems.ADVANCED_SOLDERING_IRON.get());
+                        output.accept(CSMItems.SOLDER_SUCKER.get());
                     }).build());
 
     /**

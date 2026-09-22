@@ -40,6 +40,11 @@ public class CSMItems {
     public static final DeferredItem<Item> ADVANCED_SOLDERING_IRON = ITEMS.registerSimpleItem("advanced_soldering_iron");
 
     /**
+     * 吸锡器
+     */
+     public static final DeferredItem<Item> SOLDER_SUCKER = ITEMS.registerSimpleItem("solder_sucker");
+
+    /**
      * 物品注册
      */
     public static void register(IEventBus eventBus) {
