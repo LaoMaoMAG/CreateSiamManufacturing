@@ -1,6 +1,32 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "createsiammfg:item/solder_sucker/item_0"
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+
+  "base": {
+    "parent": "createsiammfg:item/solder_sucker/item"
+  },
+
+  "perspectives": {
+    "ground": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+
+    "firstperson_righthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "firstperson_lefthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+
+    "thirdperson_righthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+
+    "fixed": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    }
   }
 }

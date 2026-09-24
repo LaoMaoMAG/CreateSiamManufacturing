@@ -32,6 +32,7 @@ public class CreateSiamManufacturing {
      * @param modContainer 模组容器
      */
     public CreateSiamManufacturing(IEventBus modEventBus, ModContainer modContainer) {
+        LOGGER.info("Create Siam Manufacturing is loading!");
         CSMRegistrate.register(modEventBus);
     }
 }
