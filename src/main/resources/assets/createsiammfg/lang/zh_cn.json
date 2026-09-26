@@ -5,5 +5,9 @@
   "item.createsiammfg.hot_soldering_iron": "热烙铁",
   "item.createsiammfg.electric_soldering_iron": "电烙铁",
   "item.createsiammfg.advanced_soldering_iron": "电烙铁 Pro MAX",
-  "item.createsiammfg.solder_sucker": "吸锡器"
+  "item.createsiammfg.solder_sucker": "吸锡器",
+  "item.createsiammfg.solder_wire": "焊锡线",
+  "item.createsiammfg.rosin": "松香",
+  "block.createsiammfg.crafting_table": "手工台",
+  "block.createsiammfg.mechanical_juicer": "动力榨汁机"
 }
