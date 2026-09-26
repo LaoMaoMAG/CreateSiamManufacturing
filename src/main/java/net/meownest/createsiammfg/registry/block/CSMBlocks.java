@@ -2,6 +2,7 @@ package net.meownest.createsiammfg.registry.block;
 
 import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
+import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
 import net.meownest.createsiammfg.registry.CSMRegistrate;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -23,5 +24,11 @@ public class CSMBlocks {
      * 动力榨汁机
      */
     public static final BlockEntry<?> MECHANICAL_JUICER = REGISTRATE.block("mechanical_juicer", MechanicalJuicerBlock::new)
+            .register();
+
+    /**
+     * 动力筛分机
+     */
+    public static final BlockEntry<?> MECHANICAL_SCREENING = REGISTRATE.block("mechanical_screening", MechanicalScreeningBlock::new)
             .register();
 }
