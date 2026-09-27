@@ -24,4 +24,5 @@ public class CSMBlockEntities {
                     .validBlocks(CSMBlocks.MECHANICAL_JUICER)
                     .register();
 
+    public static void register() {}
 }

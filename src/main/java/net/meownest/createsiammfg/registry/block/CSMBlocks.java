@@ -1,5 +1,6 @@
 package net.meownest.createsiammfg.registry.block;
 
+import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
 import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
@@ -29,13 +30,13 @@ public class CSMBlocks {
     /**
      * 动力榨汁机
      */
-    public static final BlockEntry<?> MECHANICAL_JUICER = REGISTRATE.block("mechanical_juicer", MechanicalJuicerBlock::new)
+    public static final BlockEntry<MechanicalJuicerBlock> MECHANICAL_JUICER = REGISTRATE.block("mechanical_juicer", MechanicalJuicerBlock::new)
             .initialProperties(SharedProperties::stone) // 方块属性：岩石
             .properties(p -> p.noOcclusion().mapColor(MapColor.STONE)) // 方块属性：地图颜色
             .transform(axeOrPickaxe()) // 可斧镐挖掘
-            .item()
-            .transform(customItemModel())
             .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
+            .item(AssemblyOperatorBlockItem::new)
+            .transform(customItemModel())
             .register();
 
     /**
@@ -43,4 +44,6 @@ public class CSMBlocks {
      */
     public static final BlockEntry<?> MECHANICAL_SCREENING = REGISTRATE.block("mechanical_screening", MechanicalScreeningBlock::new)
             .register();
+
+    public static void register() {}
 }
