@@ -1,6 +1,32 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "createsiammfg:item/electric_soldering_iron"
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+
+  "base": {
+    "parent": "createsiammfg:item/electric_soldering_iron/item"
+  },
+
+  "perspectives": {
+    "ground": {
+      "parent": "createsiammfg:item/electric_soldering_iron/model"
+    },
+
+    "firstperson_righthand": {
+      "parent": "createsiammfg:item/electric_soldering_iron/model"
+    },
+    "firstperson_lefthand": {
+      "parent": "createsiammfg:item/electric_soldering_iron/model"
+    },
+
+    "thirdperson_righthand": {
+      "parent": "createsiammfg:item/electric_soldering_iron/model"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createsiammfg:item/electric_soldering_iron/model"
+    },
+
+    "fixed": {
+      "parent": "createsiammfg:item/electric_soldering_iron/model"
+    }
   }
 }
