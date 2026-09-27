@@ -24,11 +24,6 @@ public class CSMItems {
     public static final DeferredItem<Item> SOLDERING_IRON = ITEMS.registerSimpleItem("soldering_iron");
 
     /**
-     * 热烙铁
-     */
-    public static final DeferredItem<Item> HOT_SOLDERING_IRON = ITEMS.registerSimpleItem("hot_soldering_iron");
-
-    /**
      * 电烙铁
      */
     public static final DeferredItem<Item> ELECTRIC_SOLDERING_IRON = ITEMS.registerSimpleItem("electric_soldering_iron");
