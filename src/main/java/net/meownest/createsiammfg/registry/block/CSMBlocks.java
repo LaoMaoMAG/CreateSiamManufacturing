@@ -1,5 +1,7 @@
 package net.meownest.createsiammfg.registry.block;
 
+import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.SharedProperties;
 import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
 import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
@@ -7,6 +9,10 @@ import net.meownest.createsiammfg.registry.CSMRegistrate;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import net.minecraft.world.level.material.MapColor;
+
+import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
+import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 
 /**
  * CMS 方块注册类
@@ -24,6 +30,12 @@ public class CSMBlocks {
      * 动力榨汁机
      */
     public static final BlockEntry<?> MECHANICAL_JUICER = REGISTRATE.block("mechanical_juicer", MechanicalJuicerBlock::new)
+            .initialProperties(SharedProperties::stone) // 方块属性：岩石
+            .properties(p -> p.noOcclusion().mapColor(MapColor.STONE)) // 方块属性：地图颜色
+            .transform(axeOrPickaxe()) // 可斧镐挖掘
+            .item()
+            .transform(customItemModel())
+            .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
             .register();
 
     /**
