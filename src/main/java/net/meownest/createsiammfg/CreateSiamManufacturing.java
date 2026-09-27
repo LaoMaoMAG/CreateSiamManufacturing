@@ -6,7 +6,6 @@ import com.mojang.logging.LogUtils;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.ModContainer;
 
 import org.slf4j.Logger;
 
@@ -29,9 +28,8 @@ public class CreateSiamManufacturing {
      * 初始化模组
      *
      * @param modEventBus  模组事件总线
-     * @param modContainer 模组容器
      */
-    public CreateSiamManufacturing(IEventBus modEventBus, ModContainer modContainer) {
+    public CreateSiamManufacturing(IEventBus modEventBus) {
         LOGGER.info("Create Siam Manufacturing is loading!");
         CSMRegistrate.register(modEventBus);
     }
