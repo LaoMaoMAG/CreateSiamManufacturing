@@ -5,7 +5,7 @@
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"6": "siamcore:block/mechanical_juicer/head"
+		"6": "createsiammfg:block/mechanical_juicer/head"
 	},
 	"elements": [
 		{

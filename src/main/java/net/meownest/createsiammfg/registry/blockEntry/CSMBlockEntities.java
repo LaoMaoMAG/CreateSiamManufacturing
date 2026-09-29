@@ -19,10 +19,13 @@ public class CSMBlockEntities {
     /**
      * 动力榨汁机
      */
-    public static final BlockEntityEntry<MechanicalJuicerBlockEntity> MECHANICAL_JUICER =
-            REGISTRATE.blockEntity("mechanical_juicer", MechanicalJuicerBlockEntity::new)
-                    .validBlocks(CSMBlocks.MECHANICAL_JUICER)
-                    .register();
+    public static final BlockEntityEntry<MechanicalJuicerBlockEntity> MECHANICAL_JUICER = REGISTRATE
+            .blockEntity("mechanical_juicer", MechanicalJuicerBlockEntity::new)
+            .visual(() -> MechanicalJuicerVisual::new)
+            .validBlocks(CSMBlocks.MECHANICAL_JUICER)
+            .renderer(() -> MechanicalJuicerRenderer::new)
+            .register();
 
-    public static void register() {}
+    public static void register() {
+    }
 }
