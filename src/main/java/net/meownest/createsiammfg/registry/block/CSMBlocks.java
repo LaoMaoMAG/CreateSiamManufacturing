@@ -3,7 +3,6 @@ package net.meownest.createsiammfg.registry.block;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
-import com.simibubi.create.infrastructure.config.CStress;
 import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
 import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
@@ -11,7 +10,6 @@ import net.meownest.createsiammfg.registry.CSMRegistrate;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.material.MapColor;
 
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
