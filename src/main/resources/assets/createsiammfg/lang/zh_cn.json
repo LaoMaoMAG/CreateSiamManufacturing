@@ -9,5 +9,6 @@
   "item.createsiammfg.solder_wire": "焊锡线",
   "item.createsiammfg.rosin": "松香",
   "block.createsiammfg.crafting_table": "手工台",
-  "block.createsiammfg.mechanical_juicer": "动力榨汁机"
+  "block.createsiammfg.mechanical_juicer": "动力榨汁机",
+  "block.createsiammfg.mechanical_screening": "动力筛分机"
 }

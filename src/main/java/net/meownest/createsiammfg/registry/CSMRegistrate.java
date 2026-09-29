@@ -2,18 +2,25 @@ package net.meownest.createsiammfg.registry;
 
 import static net.meownest.createsiammfg.CreateSiamManufacturing.MOD_ID;
 
+import com.simibubi.create.foundation.item.ItemDescription;
+import com.simibubi.create.foundation.item.KineticStats;
+import com.simibubi.create.foundation.item.TooltipModifier;
+import net.createmod.catnip.lang.FontHelper;
 import net.meownest.createsiammfg.registry.block.CSMBlocks;
 import net.meownest.createsiammfg.registry.blockEntry.CSMBlockEntities;
 import net.meownest.createsiammfg.registry.item.CSMItems;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 
 /**
  * 模组注册类
  */
 public class CSMRegistrate {
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID);
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MOD_ID)
+            .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
 
     public static void register(IEventBus modEventBus) {
         CSMBlocks.register(); // 注册方块

@@ -22,12 +22,6 @@ public class CSMBlocks {
     private static final CreateRegistrate REGISTRATE = CSMRegistrate.REGISTRATE;
 
     /**
-     * 手工台
-     */
-    public static final BlockEntry<?> CRAFTING_TABLE = REGISTRATE.block("crafting_table", CraftingTableBlocks::new)
-            .register();
-
-    /**
      * 动力榨汁机
      */
     public static final BlockEntry<MechanicalJuicerBlock> MECHANICAL_JUICER = REGISTRATE
@@ -37,6 +31,15 @@ public class CSMBlocks {
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
             .item(AssemblyOperatorBlockItem::new)
+             // .removeTab(CreativeModeTabs.SEARCH)
+            .transform(customItemModel())
+            .register();
+
+    /**
+     * 手工台
+     */
+    public static final BlockEntry<?> CRAFTING_TABLE = REGISTRATE.block("crafting_table", CraftingTableBlocks::new)
+            .item(AssemblyOperatorBlockItem::new)
             .transform(customItemModel())
             .register();
 
@@ -44,6 +47,8 @@ public class CSMBlocks {
      * 动力筛分机
      */
     public static final BlockEntry<?> MECHANICAL_SCREENING = REGISTRATE.block("mechanical_screening", MechanicalScreeningBlock::new)
+            .item(AssemblyOperatorBlockItem::new)
+            .transform(customItemModel())
             .register();
 
     public static void register() {}

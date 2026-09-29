@@ -22,7 +22,7 @@ public class CSMCreativeModeTab {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MOD_TAB =
             CREATIVE_MODE_TABS.register("mod_tab", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + MOD_ID + ".mod_tab"))
-                    .withTabsBefore(CreativeModeTabs.COMBAT)
+                    // .withTabsBefore(CreativeModeTabs.COMBAT)
                     .icon(() -> CSMItems.BLADE_HEAD.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
 
@@ -33,6 +33,10 @@ public class CSMCreativeModeTab {
                         output.accept(CSMItems.SOLDER_SUCKER.get());
                         output.accept(CSMItems.SOLDER_WIRE.get());
                         output.accept(CSMItems.ROSIN.get());
+
+                        output.accept(CSMBlocks.MECHANICAL_JUICER.get());
+                        output.accept(CSMBlocks.CRAFTING_TABLE.get());
+                        output.accept(CSMBlocks.MECHANICAL_SCREENING.get());
 
                     }).build());
 
