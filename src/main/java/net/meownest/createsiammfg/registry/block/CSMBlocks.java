@@ -38,7 +38,6 @@ public class CSMBlocks {
             .properties(p -> p.noOcclusion().mapColor(MapColor.STONE))
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-             // .addLayer(() -> RenderType::cutoutMipped)
             .item(AssemblyOperatorBlockItem::new)
             .transform(customItemModel())
             .register();

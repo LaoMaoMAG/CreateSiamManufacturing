@@ -94,6 +94,7 @@ public class MechanicalJuicerBlockEntity  extends BasinOperatingBlockEntity {
         return speed / 2;
     }
 
+    // 成就，需要更改
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
         super.addBehaviours(behaviours);
