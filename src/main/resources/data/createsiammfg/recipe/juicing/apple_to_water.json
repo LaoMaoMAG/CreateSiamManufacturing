@@ -1,0 +1,14 @@
+{
+  "type": "createsiammfg:juicing",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "id": "minecraft:water"
+    }
+  ]
+}

@@ -21,5 +21,6 @@ public class CSMRegistrate {
         CSMItems.register(modEventBus); // 注册物品
         CSMCreativeModeTab.register(modEventBus); // 注册创造模式标签
         REGISTRATE.registerEventListeners(modEventBus);
+        CSMRecipeTypes.register(modEventBus); // 注册配方类型
     }
 }

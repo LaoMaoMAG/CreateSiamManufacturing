@@ -23,6 +23,7 @@ import com.simibubi.create.infrastructure.config.AllConfigs;
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.data.Couple;
 import net.createmod.catnip.math.VecHelper;
+import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.HolderLookup;
@@ -34,10 +35,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -259,14 +258,14 @@ public class MechanicalJuicerBlockEntity  extends BasinOperatingBlockEntity {
         return matchingRecipes;
     }
 
+    /**
+     * 静态配方过滤器，只接受 createsiammfg:juicing
+     * @param recipe 候选配方
+     * @return 如果 true 为该配方类型可被处理，反之则不能被处理
+     */
     @Override
     protected boolean matchStaticFilters(RecipeHolder<? extends Recipe<?>> recipe) {
-        Recipe<?> r = recipe.value();
-        return ((r instanceof CraftingRecipe && !(r instanceof ShapedRecipe)
-                && AllConfigs.server().recipes.allowShapelessInMixer.get() && r.getIngredients()
-                .size() > 1
-                && !MechanicalPressBlockEntity.canCompress(r)) && !AllRecipeTypes.shouldIgnoreInAutomation(recipe)
-                || r.getType() == AllRecipeTypes.MIXING.getType());
+        return recipe.value().getType() == CSMRecipeTypes.JUICING.getType();
     }
 
     @Override
