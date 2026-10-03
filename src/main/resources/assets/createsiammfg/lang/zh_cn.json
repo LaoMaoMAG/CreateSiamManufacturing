@@ -3,6 +3,9 @@
   "section.createsiammfg.tools": "工具",
   "section.createsiammfg.material": "材料",
   "section.createsiammfg.machine": "机器",
+
+  "createsiammfg.recipe.mechanical_juicer": "动力榨汁",
+
   "item.createsiammfg.blade_head": "刀头",
   "item.createsiammfg.soldering_iron": "烙铁",
   "item.createsiammfg.hot_soldering_iron": "热烙铁",
