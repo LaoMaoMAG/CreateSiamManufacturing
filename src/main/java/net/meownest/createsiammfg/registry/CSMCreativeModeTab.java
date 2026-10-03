@@ -1,11 +1,11 @@
 package net.meownest.createsiammfg.registry;
 
-import net.meownest.createsiammfg.CreateSiamManufacturing;
-
 import net.neoforged.bus.api.IEventBus;
 
 import net.mcexpanded.fancytabsections.FancyTabSections;
 import net.mcexpanded.fancytabsections.Section.SectionAnimatedTextured;
+
+import net.meownest.createsiammfg.CreateSiamManufacturing;
 
 
 public class CSMCreativeModeTab {

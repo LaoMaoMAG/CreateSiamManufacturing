@@ -1,8 +1,9 @@
 package net.meownest.createsiammfg.registry;
 
-import dev.engine_room.flywheel.lib.model.baked.PartialModel;
-import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.minecraft.resources.ResourceLocation;
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+
+import net.meownest.createsiammfg.CreateSiamManufacturing;
 
 /**
  * CSM 模型注册类

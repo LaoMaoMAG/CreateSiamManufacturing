@@ -1,8 +1,10 @@
 package net.meownest.createsiammfg.compat.jei;
 
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
-import com.simibubi.create.content.processing.basin.BasinRecipe;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jetbrains.annotations.NotNull;
+import net.minecraft.resources.ResourceLocation;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -12,16 +14,18 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
+import com.simibubi.create.content.processing.basin.BasinRecipe;
+
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.compat.jei.category.JuicingCategory;
 import net.meownest.createsiammfg.registry.CSMBlocks;
 import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 
-import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
+
+
 
 /**
  * CSM JEI 插件类

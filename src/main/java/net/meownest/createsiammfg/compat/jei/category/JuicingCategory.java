@@ -1,15 +1,14 @@
 package net.meownest.createsiammfg.compat.jei.category;
 
-import com.simibubi.create.compat.jei.category.BasinCategory;
-import com.simibubi.create.content.processing.basin.BasinRecipe;
-
-import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
-
-import net.meownest.createsiammfg.compat.jei.category.animations.AnimatedJuicer;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 import net.minecraft.client.gui.GuiGraphics;
 
-import javax.annotation.ParametersAreNonnullByDefault;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
+import com.simibubi.create.compat.jei.category.BasinCategory;
+import com.simibubi.create.content.processing.basin.BasinRecipe;
+
+import net.meownest.createsiammfg.compat.jei.category.animations.AnimatedJuicer;
 
 /*
 * 榨汁机 Category 类

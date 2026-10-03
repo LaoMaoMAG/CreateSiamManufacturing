@@ -1,18 +1,19 @@
 package net.meownest.createsiammfg.registry;
 
+import net.minecraft.world.level.material.MapColor;
+import com.tterrag.registrate.util.entry.BlockEntry;
+
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
-import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
-import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
-import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
-
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.tterrag.registrate.util.entry.BlockEntry;
-import net.minecraft.world.level.material.MapColor;
 
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
+
+import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
+import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
+import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
 
 /**
  * CMS 方块注册类

@@ -1,11 +1,12 @@
 package net.meownest.createsiammfg.registry;
 
-import net.meownest.createsiammfg.CreateSiamManufacturing;
-
 import net.minecraft.world.item.Item;
+
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import net.meownest.createsiammfg.CreateSiamManufacturing;
 
 /**
  * CSM 物品注册表

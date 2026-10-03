@@ -2,15 +2,16 @@ package net.meownest.createsiammfg.compat.jei.category.animations;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.util.Mth;
+
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.compat.jei.category.animations.AnimatedKinetics;
-
 import net.createmod.catnip.animation.AnimationTickHolder;
+
 import net.meownest.createsiammfg.registry.CSMBlocks;
 import net.meownest.createsiammfg.registry.CSMPartialModels;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.util.Mth;
 
 /*
  * 榨汁机动画
@@ -60,7 +61,7 @@ public class AnimatedJuicer extends AnimatedKinetics {
                 .atLocal(0, 1.65, 0)
                 .scale(scale)
                 .render(graphics);
-        
+
         matrixStack.popPose();
     }
 }

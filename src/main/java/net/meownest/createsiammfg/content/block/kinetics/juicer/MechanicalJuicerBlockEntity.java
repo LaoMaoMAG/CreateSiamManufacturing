@@ -3,25 +3,6 @@ package net.meownest.createsiammfg.content.block.kinetics.juicer;
 import java.util.List;
 import java.util.Optional;
 
-import com.simibubi.create.AllSoundEvents;
-import com.simibubi.create.content.fluids.FluidFX;
-import com.simibubi.create.content.fluids.potion.PotionMixingRecipes;
-import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
-import com.simibubi.create.content.processing.basin.BasinBlockEntity;
-import com.simibubi.create.content.processing.basin.BasinOperatingBlockEntity;
-import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
-import com.simibubi.create.foundation.advancement.AllAdvancements;
-import com.simibubi.create.foundation.advancement.CreateAdvancement;
-import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
-import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
-import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour.TankSegment;
-import com.simibubi.create.foundation.item.SmartInventory;
-import com.simibubi.create.infrastructure.config.AllConfigs;
-
-import net.createmod.catnip.animation.AnimationTickHolder;
-import net.createmod.catnip.data.Couple;
-import net.createmod.catnip.math.VecHelper;
-import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.HolderLookup;
@@ -44,6 +25,27 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.IItemHandler;
+
+import com.simibubi.create.AllSoundEvents;
+import com.simibubi.create.content.fluids.FluidFX;
+import com.simibubi.create.content.fluids.potion.PotionMixingRecipes;
+import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
+import com.simibubi.create.content.processing.basin.BasinBlockEntity;
+import com.simibubi.create.content.processing.basin.BasinOperatingBlockEntity;
+import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
+import com.simibubi.create.foundation.advancement.AllAdvancements;
+import com.simibubi.create.foundation.advancement.CreateAdvancement;
+import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
+import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour.TankSegment;
+import com.simibubi.create.foundation.item.SmartInventory;
+import com.simibubi.create.infrastructure.config.AllConfigs;
+
+import net.createmod.catnip.animation.AnimationTickHolder;
+import net.createmod.catnip.data.Couple;
+import net.createmod.catnip.math.VecHelper;
+
+import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 
 public class MechanicalJuicerBlockEntity  extends BasinOperatingBlockEntity {
 
