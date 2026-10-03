@@ -22,12 +22,7 @@ public class CSMRegistrate {
         CSMBlocks.register(); // 注册方块
         CSMBlockEntities.register(); // 注册方块实体
         CSMItems.register(modEventBus); // 注册物品
-
-
-        // CSMCreativeModeTab.register(modEventBus); // 注册创造模式标签
-        new CSMCreativeModeTab(modEventBus); // 注册创造模式标签
-
-
+        CSMCreativeModeTab.register(modEventBus); // 注册创造模式标签
         REGISTRATE.registerEventListeners(modEventBus);
         CSMRecipeTypes.register(modEventBus); // 注册配方类型
     }

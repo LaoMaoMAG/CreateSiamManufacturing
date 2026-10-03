@@ -22,7 +22,12 @@ public class CSMCreativeModeTab {
         return ResourceLocation.fromNamespaceAndPath(CreateSiamManufacturing.MOD_ID, path);
     }
 
-    public CSMCreativeModeTab(IEventBus modEventBus) {
+    /**
+     * 注册创造模式标签
+     *
+     * @param modEventBus MOD 事件总线
+     */
+    public static void register(IEventBus modEventBus) {
         //register creative mode tab
         FancyTabSections.registerCreativeModeTab(modEventBus, rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
 
@@ -87,15 +92,6 @@ public class CSMCreativeModeTab {
                         .add(CSMBlocks.MECHANICAL_SCREENING)
 
         );
-
-    }
-
-    /**
-     * 注册创造模式标签
-     *
-     * @param modEventBus MOD 事件总线
-     */
-    public static void register(IEventBus modEventBus) {
 
     }
 }
