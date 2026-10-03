@@ -1,13 +1,11 @@
-package net.meownest.createsiammfg.registry.blockEntry;
+package net.meownest.createsiammfg.registry;
 
-import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerRenderer;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerVisual;
-import net.meownest.createsiammfg.registry.CSMRegistrate;
 
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import net.meownest.createsiammfg.registry.block.CSMBlocks;
 
 /**
  * CMS 方块实体注册类

@@ -1,10 +1,7 @@
 package net.meownest.createsiammfg.registry;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.meownest.createsiammfg.registry.block.CSMBlocks;
-import net.meownest.createsiammfg.registry.item.CSMItems;
 
-import net.minecraft.network.chat.Component;
 import net.neoforged.bus.api.IEventBus;
 
 import net.mcexpanded.fancytabsections.FancyTabSections;

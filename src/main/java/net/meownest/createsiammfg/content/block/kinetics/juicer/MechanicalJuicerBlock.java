@@ -19,7 +19,7 @@ import com.simibubi.create.content.kinetics.base.KineticBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.block.IBE;
 
-import net.meownest.createsiammfg.registry.blockEntry.CSMBlockEntities;
+import net.meownest.createsiammfg.registry.CSMBlockEntities;
 
 
 /*

@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.registry.item;
+package net.meownest.createsiammfg.registry;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 

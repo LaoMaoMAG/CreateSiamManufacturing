@@ -2,10 +2,6 @@ package net.meownest.createsiammfg.registry;
 
 import static net.meownest.createsiammfg.CreateSiamManufacturing.MOD_ID;
 
-import net.meownest.createsiammfg.registry.block.CSMBlocks;
-import net.meownest.createsiammfg.registry.blockEntry.CSMBlockEntities;
-import net.meownest.createsiammfg.registry.item.CSMItems;
-
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
