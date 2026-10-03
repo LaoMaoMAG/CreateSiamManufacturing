@@ -11,7 +11,7 @@ import net.meownest.createsiammfg.compat.jei.category.MechanicalJuicingCategory;
 import net.meownest.createsiammfg.registry.CSMBlocks;
 import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 
-public class CMSJEICategories {
+public class CSMJEICategories {
     public static final CreateRecipeCategory<BasinRecipe> MECHANICAL_JUICER =
             new CreateRecipeCategory.Builder<>(BasinRecipe.class)
                     .addTypedRecipes(CSMRecipeTypes.JUICING)

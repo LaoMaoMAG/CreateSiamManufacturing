@@ -14,17 +14,9 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 
-import com.simibubi.create.AllBlocks;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
-import com.simibubi.create.content.processing.basin.BasinRecipe;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.meownest.createsiammfg.compat.jei.category.MechanicalJuicingCategory;
-import net.meownest.createsiammfg.registry.CSMBlocks;
-import net.meownest.createsiammfg.registry.CSMRecipeTypes;
-
-
-
 
 
 /**
@@ -44,7 +36,7 @@ public class CSMJEIPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         modCategories.clear();
-        modCategories.addAll(CMSJEICategories.getCategories());
+        modCategories.addAll(CSMJEICategories.getCategories());
         registration.addRecipeCategories(modCategories.toArray(IRecipeCategory[]::new));
     }
 
