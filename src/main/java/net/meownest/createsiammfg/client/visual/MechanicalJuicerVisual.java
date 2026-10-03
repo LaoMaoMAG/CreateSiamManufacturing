@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.block.kinetics.juicer;
+package net.meownest.createsiammfg.client.visual;
 
 import java.util.function.Consumer;
 
@@ -14,6 +14,7 @@ import dev.engine_room.flywheel.lib.instance.InstanceTypes;
 import dev.engine_room.flywheel.lib.instance.OrientedInstance;
 import dev.engine_room.flywheel.lib.model.Models;
 import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
+import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
 import net.meownest.createsiammfg.registry.CSMPartialModels;
 import net.minecraft.core.Direction;
 

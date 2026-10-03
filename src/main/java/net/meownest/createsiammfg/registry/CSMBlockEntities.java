@@ -1,8 +1,8 @@
 package net.meownest.createsiammfg.registry;
 
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
-import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerRenderer;
-import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerVisual;
+import net.meownest.createsiammfg.client.renderer.MechanicalJuicerRenderer;
+import net.meownest.createsiammfg.client.visual.MechanicalJuicerVisual;
 
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
