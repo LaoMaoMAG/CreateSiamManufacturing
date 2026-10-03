@@ -41,22 +41,10 @@ public class CSMJEIPlugin implements IModPlugin {
         return CreateSiamManufacturing.rl("jei_plugin");
     }
 
-    private void loadCategories() {
-        modCategories.clear();
-
-        modCategories.add(
-                new CreateRecipeCategory.Builder<>(BasinRecipe.class)
-                        .addTypedRecipes(CSMRecipeTypes.JUICING)
-                        .catalyst(CSMBlocks.MECHANICAL_JUICER::get)
-                        .doubleItemIcon(CSMBlocks.MECHANICAL_JUICER.get(), AllBlocks.BASIN.get())
-                        .emptyBackground(177, 103)
-                        .build(CreateSiamManufacturing.rl("mechanical_juicer"), MechanicalJuicingCategory::new)
-        );
-    }
-
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        loadCategories();
+        modCategories.clear();
+        modCategories.addAll(CMSJEICategories.getCategories());
         registration.addRecipeCategories(modCategories.toArray(IRecipeCategory[]::new));
     }
 
