@@ -1,43 +1,94 @@
 package net.meownest.createsiammfg.registry;
 
+import net.mcexpanded.fancytabsections.Section.SectionColored;
 import net.meownest.createsiammfg.registry.block.CSMBlocks;
 import net.meownest.createsiammfg.registry.item.CSMItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static net.meownest.createsiammfg.CreateSiamManufacturing.MOD_ID;
+import net.mcexpanded.fancytabsections.FancyTabSections;
+
+import net.meownest.createsiammfg.CreateSiamManufacturing;
+
 
 public class CSMCreativeModeTab {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
+    public static ResourceLocation rl(String path)
+    {
+        return ResourceLocation.fromNamespaceAndPath(CreateSiamManufacturing.MOD_ID, path);
+    }
 
-    /**
-     * 模组主创造栏
-     */
-    @SuppressWarnings("unused")
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MOD_TAB =
-            CREATIVE_MODE_TABS.register("mod_tab", () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup." + MOD_ID + ".mod_tab"))
-                    // .withTabsBefore(CreativeModeTabs.COMBAT)
-                    .icon(() -> CSMItems.BLADE_HEAD.get().getDefaultInstance())
-                    .displayItems((parameters, output) -> {
+    public CSMCreativeModeTab(IEventBus modEventBus) {
+        //register creative mode tab
+        FancyTabSections.registerCreativeModeTab(modEventBus, rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
 
-                        output.accept(CSMItems.BLADE_HEAD.get());
-                        output.accept(CSMItems.SOLDERING_IRON.get());
-                        output.accept(CSMItems.ELECTRIC_SOLDERING_IRON.get());
-                        output.accept(CSMItems.ADVANCED_SOLDERING_IRON.get());
-                        output.accept(CSMItems.SOLDER_SUCKER.get());
-                        output.accept(CSMItems.SOLDER_WIRE.get());
-                        output.accept(CSMItems.ROSIN.get());
+        FancyTabSections.addSection(rl("mod_tab"),
+                //identifier of the section
+                new SectionColored(rl("tools"))
+                        //title to display in the "empty row" (banner) of the section
+                        //by default the title will use the translation key `section.[namespace].[path]`, just as shown here
+                        .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".tools"))
+                        //background color of the "empty row" - ARGB
+                        .setBannerColor(0xFF1a1a2e)
+                        //text color - ARGB
+                        .setTextColor(0xFFBBAA66)
+                        //text shadow
+                        .setTextShadow(true)
 
-                        output.accept(CSMBlocks.MECHANICAL_JUICER.get());
-                        output.accept(CSMBlocks.CRAFTING_TABLE.get());
-                        output.accept(CSMBlocks.MECHANICAL_SCREENING.get());
+                        //adds an item
+                        .add(CSMItems.SOLDERING_IRON)
+                        .add(CSMItems.ELECTRIC_SOLDERING_IRON)
+                        .add(CSMItems.ADVANCED_SOLDERING_IRON)
+                        .add(CSMItems.SOLDER_SUCKER)
 
-                    }).build());
+
+        );
+
+        FancyTabSections.addSection(rl("mod_tab"),
+                //identifier of the section
+                new SectionColored(rl("material"))
+                        //title to display in the "empty row" (banner) of the section
+                        //by default the title will use the translation key `section.[namespace].[path]`, just as shown here
+                        .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".material"))
+                        //background color of the "empty row" - ARGB
+                        .setBannerColor(0xFF1a1a2e)
+                        //text color - ARGB
+                        .setTextColor(0xFFBBAA66)
+                        //text shadow
+                        .setTextShadow(true)
+
+                        //adds an item
+                        .add(CSMItems.BLADE_HEAD)
+                        .add(CSMItems.SOLDER_WIRE)
+                        .add(CSMItems.ROSIN)
+
+
+        );
+
+        FancyTabSections.addSection(rl("mod_tab"),
+                //identifier of the section
+                new SectionColored(rl("machine"))
+                        //title to display in the "empty row" (banner) of the section
+                        .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".machine"))
+                        //background color of the "empty row" - ARGB
+                        .setBannerColor(0xFF1a1a2e)
+                        //text color - ARGB
+                        .setTextColor(0xFFBBAA66)
+                        //text shadow
+                        .setTextShadow(true)
+
+                        //adds a block
+                        .add(CSMBlocks.MECHANICAL_JUICER)
+                        .add(CSMBlocks.CRAFTING_TABLE)
+                        .add(CSMBlocks.MECHANICAL_SCREENING)
+
+        );
+
+    }
 
     /**
      * 注册创造模式标签
@@ -45,6 +96,6 @@ public class CSMCreativeModeTab {
      * @param modEventBus MOD 事件总线
      */
     public static void register(IEventBus modEventBus) {
-        CREATIVE_MODE_TABS.register(modEventBus);
+
     }
 }
