@@ -16,7 +16,7 @@ import net.meownest.createsiammfg.registry.CSMPartialModels;
 /*
  * 榨汁机动画
  */
-public class AnimatedJuicer extends AnimatedKinetics {
+public class AnimatedMechanicalJuicer extends AnimatedKinetics {
 
     @Override
     public void draw(GuiGraphics graphics, int xOffset, int yOffset) {

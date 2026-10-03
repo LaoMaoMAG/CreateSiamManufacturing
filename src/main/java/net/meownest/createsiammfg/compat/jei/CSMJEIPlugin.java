@@ -19,7 +19,7 @@ import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.meownest.createsiammfg.compat.jei.category.JuicingCategory;
+import net.meownest.createsiammfg.compat.jei.category.MechanicalJuicingCategory;
 import net.meownest.createsiammfg.registry.CSMBlocks;
 import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 
@@ -50,7 +50,7 @@ public class CSMJEIPlugin implements IModPlugin {
                         .catalyst(CSMBlocks.MECHANICAL_JUICER::get)
                         .doubleItemIcon(CSMBlocks.MECHANICAL_JUICER.get(), AllBlocks.BASIN.get())
                         .emptyBackground(177, 103)
-                        .build(CreateSiamManufacturing.rl("mechanical_juicer"), JuicingCategory::new)
+                        .build(CreateSiamManufacturing.rl("mechanical_juicer"), MechanicalJuicingCategory::new)
         );
     }
 
