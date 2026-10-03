@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "I": {
+      "item": "createsiammfg:blade_head"
+    },
+    "S": {
+      "item": "create:cogwheel"
+    }
+  },
+  "pattern": [
+    "S",
+    "C",
+    "I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createsiammfg:mechanical_juicer"
+  }
+}
