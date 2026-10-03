@@ -1,14 +1,16 @@
 package net.meownest.createsiammfg.registry;
 
-import net.mcexpanded.fancytabsections.Section.SectionColored;
+import net.mcexpanded.fancytabsections.Section.SectionAnimatedTextured;
+import net.mcexpanded.fancytabsections.Section.SectionTextured;
+import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.registry.block.CSMBlocks;
 import net.meownest.createsiammfg.registry.item.CSMItems;
+
 import net.minecraft.network.chat.Component;
 import net.neoforged.bus.api.IEventBus;
 
 import net.mcexpanded.fancytabsections.FancyTabSections;
-
-import net.meownest.createsiammfg.CreateSiamManufacturing;
+import net.mcexpanded.fancytabsections.Section.SectionColored;
 
 
 public class CSMCreativeModeTab {
@@ -22,19 +24,13 @@ public class CSMCreativeModeTab {
         FancyTabSections.registerCreativeModeTab(modEventBus, CreateSiamManufacturing.rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
 
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
-                //identifier of the section
-                new SectionColored(CreateSiamManufacturing.rl("tools"))
-                        //title to display in the "empty row" (banner) of the section
-                        //by default the title will use the translation key `section.[namespace].[path]`, just as shown here
-                        .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".tools"))
-                        //background color of the "empty row" - ARGB
-                        .setBannerColor(0xFF1a1a2e)
-                        //text color - ARGB
-                        .setTextColor(0xFFBBAA66)
-                        //text shadow
+                new SectionAnimatedTextured(CreateSiamManufacturing.rl("tools"))
+                        .setFrames(8)
+                        .setFrameTimeInMS(200)
+                        .setCollapsible(false)
+                        .setTextColor(0xFFFFFF)
                         .setTextShadow(true)
 
-                        //adds an item
                         .add(CSMItems.SOLDERING_IRON)
                         .add(CSMItems.ELECTRIC_SOLDERING_IRON)
                         .add(CSMItems.ADVANCED_SOLDERING_IRON)
@@ -43,20 +39,16 @@ public class CSMCreativeModeTab {
 
         );
 
+        Component.literal("Hello, World!");
+
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
-                //identifier of the section
-                new SectionColored(CreateSiamManufacturing.rl("material"))
-                        //title to display in the "empty row" (banner) of the section
-                        //by default the title will use the translation key `section.[namespace].[path]`, just as shown here
-                        .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".material"))
-                        //background color of the "empty row" - ARGB
-                        .setBannerColor(0xFF1a1a2e)
-                        //text color - ARGB
-                        .setTextColor(0xFFBBAA66)
-                        //text shadow
+                new SectionAnimatedTextured(CreateSiamManufacturing.rl("material"))
+                        .setFrames(8)
+                        .setFrameTimeInMS(200)
+                        .setCollapsible(false)
+                        .setTextColor(0xFFFFFF)
                         .setTextShadow(true)
 
-                        //adds an item
                         .add(CSMItems.BLADE_HEAD)
                         .add(CSMItems.SOLDER_WIRE)
                         .add(CSMItems.ROSIN)
@@ -65,18 +57,13 @@ public class CSMCreativeModeTab {
         );
 
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
-                //identifier of the section
-                new SectionColored(CreateSiamManufacturing.rl("machine"))
-                        //title to display in the "empty row" (banner) of the section
-                        .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".machine"))
-                        //background color of the "empty row" - ARGB
-                        .setBannerColor(0xFF1a1a2e)
-                        //text color - ARGB
-                        .setTextColor(0xFFBBAA66)
-                        //text shadow
+                new SectionAnimatedTextured(CreateSiamManufacturing.rl("machine"))
+                        .setFrames(4)
+                        .setFrameTimeInMS(200)
+                        .setCollapsible(false)
+                        .setTextColor(0xFFFFFF)
                         .setTextShadow(true)
 
-                        //adds a block
                         .add(CSMBlocks.MECHANICAL_JUICER)
                         .add(CSMBlocks.CRAFTING_TABLE)
                         .add(CSMBlocks.MECHANICAL_SCREENING)
