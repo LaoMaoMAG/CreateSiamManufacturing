@@ -2,10 +2,6 @@ package net.meownest.createsiammfg.registry;
 
 import static net.meownest.createsiammfg.CreateSiamManufacturing.MOD_ID;
 
-import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.foundation.item.KineticStats;
-import com.simibubi.create.foundation.item.TooltipModifier;
-import net.createmod.catnip.lang.FontHelper;
 import net.meownest.createsiammfg.registry.block.CSMBlocks;
 import net.meownest.createsiammfg.registry.blockEntry.CSMBlockEntities;
 import net.meownest.createsiammfg.registry.item.CSMItems;
