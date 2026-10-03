@@ -3,13 +3,8 @@ package net.meownest.createsiammfg.registry;
 import net.mcexpanded.fancytabsections.Section.SectionColored;
 import net.meownest.createsiammfg.registry.block.CSMBlocks;
 import net.meownest.createsiammfg.registry.item.CSMItems;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 import net.mcexpanded.fancytabsections.FancyTabSections;
 
@@ -17,11 +12,6 @@ import net.meownest.createsiammfg.CreateSiamManufacturing;
 
 
 public class CSMCreativeModeTab {
-    public static ResourceLocation rl(String path)
-    {
-        return ResourceLocation.fromNamespaceAndPath(CreateSiamManufacturing.MOD_ID, path);
-    }
-
     /**
      * 注册创造模式标签
      *
@@ -29,11 +19,11 @@ public class CSMCreativeModeTab {
      */
     public static void register(IEventBus modEventBus) {
         //register creative mode tab
-        FancyTabSections.registerCreativeModeTab(modEventBus, rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
+        FancyTabSections.registerCreativeModeTab(modEventBus, CreateSiamManufacturing.rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
 
-        FancyTabSections.addSection(rl("mod_tab"),
+        FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 //identifier of the section
-                new SectionColored(rl("tools"))
+                new SectionColored(CreateSiamManufacturing.rl("tools"))
                         //title to display in the "empty row" (banner) of the section
                         //by default the title will use the translation key `section.[namespace].[path]`, just as shown here
                         .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".tools"))
@@ -53,9 +43,9 @@ public class CSMCreativeModeTab {
 
         );
 
-        FancyTabSections.addSection(rl("mod_tab"),
+        FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 //identifier of the section
-                new SectionColored(rl("material"))
+                new SectionColored(CreateSiamManufacturing.rl("material"))
                         //title to display in the "empty row" (banner) of the section
                         //by default the title will use the translation key `section.[namespace].[path]`, just as shown here
                         .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".material"))
@@ -74,9 +64,9 @@ public class CSMCreativeModeTab {
 
         );
 
-        FancyTabSections.addSection(rl("mod_tab"),
+        FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 //identifier of the section
-                new SectionColored(rl("machine"))
+                new SectionColored(CreateSiamManufacturing.rl("machine"))
                         //title to display in the "empty row" (banner) of the section
                         .setTitle(Component.translatable("section."+CreateSiamManufacturing.MOD_ID+".machine"))
                         //background color of the "empty row" - ARGB

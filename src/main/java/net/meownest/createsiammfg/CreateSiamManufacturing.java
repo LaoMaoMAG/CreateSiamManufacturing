@@ -4,6 +4,7 @@ import net.meownest.createsiammfg.registry.CSMRegistrate;
 
 import com.mojang.logging.LogUtils;
 
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 
@@ -33,4 +34,16 @@ public class CreateSiamManufacturing {
         LOGGER.info("Create Siam Manufacturing is loading!");
         CSMRegistrate.register(modEventBus);
     }
+
+    /**
+     * 创建资源位置
+     *
+     * @param path  路径
+     * @return      资源位置
+     */
+    public static ResourceLocation rl(String path)
+    {
+        return ResourceLocation.fromNamespaceAndPath(CreateSiamManufacturing.MOD_ID, path);
+    }
+
 }
