@@ -34,8 +34,6 @@ public class CSMCreativeModeTab {
                         .add(CSMItems.SOLDER_SUCKER)
         );
 
-        Component.literal("Hello, World!");
-
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 new SectionAnimatedTextured(CreateSiamManufacturing.rl("material"))
                         .setFrames(8)
