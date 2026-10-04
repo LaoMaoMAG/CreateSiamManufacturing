@@ -1,5 +1,7 @@
 package net.meownest.createsiammfg.registry;
 
+import java.util.Locale;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -17,9 +19,6 @@ import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.JuicingRecipe;
-
-
-import java.util.Locale;
 
 public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     // ===== 配方类型枚举 =====
@@ -51,7 +50,8 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
      */
     CSMRecipeTypes(StandardProcessingRecipe.Factory<?> factory) {
         // 设置配方资源 ID
-        this.id = ResourceLocation.fromNamespaceAndPath(CreateSiamManufacturing.MOD_ID, name().toLowerCase(Locale.ROOT));
+        this.id = CreateSiamManufacturing.rl(name().toLowerCase(Locale.ROOT));
+
         // 注册配方序列化器
         // 使用 Create 的 StandardProcessingRecipe.Serializer
         this.serializer = Registers.SERIALIZERS.register(name().toLowerCase(Locale.ROOT),
