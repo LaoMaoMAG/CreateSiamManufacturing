@@ -18,7 +18,6 @@ import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 
-
 /**
  * CSM JEI 插件类
  */
