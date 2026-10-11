@@ -3,6 +3,8 @@ package net.meownest.createsiammfg.registry;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
+import net.meownest.createsiammfg.client.renderer.CraftingTableRenderer;
+import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocksEntity;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
 import net.meownest.createsiammfg.client.renderer.MechanicalJuicerRenderer;
 import net.meownest.createsiammfg.client.visual.MechanicalJuicerVisual;
@@ -22,6 +24,12 @@ public class CSMBlockEntities {
             .visual(() -> MechanicalJuicerVisual::new)
             .validBlocks(CSMBlocks.MECHANICAL_JUICER)
             .renderer(() -> MechanicalJuicerRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<CraftingTableBlocksEntity> CRAFTING_TABLE = REGISTRATE
+            .blockEntity("crafting_table", CraftingTableBlocksEntity::new)
+            .validBlocks(CSMBlocks.CRAFTING_TABLE)
+            // .renderer(() -> CraftingTableRenderer::new)
             .register();
 
     public static void register() {
