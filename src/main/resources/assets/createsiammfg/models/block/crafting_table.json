@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "create:block/depot_side",
+		"1": "createsiammfg:block/crafting_table/side",
 		"2": "create:block/depot_top",
 		"3": "create:block/andesite_casing",
 		"particle": "create:block/andesite_casing"
