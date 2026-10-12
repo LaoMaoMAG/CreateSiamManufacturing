@@ -39,7 +39,7 @@ public class CSMBlocks {
      * 手工台
      */
     public static final BlockEntry<?> CRAFTING_TABLE = REGISTRATE.block("crafting_table", CraftingTableBlocks::new)
-            .item(AssemblyOperatorBlockItem::new)
+            .item()
             .transform(customItemModel())
             .register();
 
@@ -47,7 +47,7 @@ public class CSMBlocks {
      * 动力筛分机
      */
     public static final BlockEntry<?> MECHANICAL_SCREENING = REGISTRATE.block("mechanical_screening", MechanicalScreeningBlock::new)
-            .item(AssemblyOperatorBlockItem::new)
+            .item()
             .transform(customItemModel())
             .register();
 

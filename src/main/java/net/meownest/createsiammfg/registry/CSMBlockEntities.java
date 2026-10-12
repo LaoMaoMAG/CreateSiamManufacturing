@@ -8,6 +8,8 @@ import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlock
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
 import net.meownest.createsiammfg.client.renderer.MechanicalJuicerRenderer;
 import net.meownest.createsiammfg.client.visual.MechanicalJuicerVisual;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 /**
  * CMS 方块实体注册类
@@ -26,12 +28,23 @@ public class CSMBlockEntities {
             .renderer(() -> MechanicalJuicerRenderer::new)
             .register();
 
+    /**
+     * 手工台
+     */
     public static final BlockEntityEntry<CraftingTableBlocksEntity> CRAFTING_TABLE = REGISTRATE
             .blockEntity("crafting_table", CraftingTableBlocksEntity::new)
             .validBlocks(CSMBlocks.CRAFTING_TABLE)
-            // .renderer(() -> CraftingTableRenderer::new)
+            .renderer(() -> CraftingTableRenderer::new)
             .register();
 
     public static void register() {
+    }
+
+    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(
+                Capabilities.ItemHandler.BLOCK,
+                CRAFTING_TABLE.get(),
+                (be, side) -> be.getItemHandler()
+        );
     }
 }

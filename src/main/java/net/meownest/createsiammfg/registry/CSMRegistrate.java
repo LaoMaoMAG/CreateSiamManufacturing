@@ -17,11 +17,18 @@ public class CSMRegistrate {
             .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
 
     public static void register(IEventBus modEventBus) {
-        CSMBlocks.register(); // 注册方块
-        CSMBlockEntities.register(); // 注册方块实体
-        CSMItems.register(modEventBus); // 注册物品
-        CSMCreativeModeTab.register(modEventBus); // 注册创造模式标签
+        // 注册方块
+        CSMBlocks.register();
+        // 注册方块实体
+        CSMBlockEntities.register();
+        // 注册物品
+        CSMItems.register(modEventBus);
+        // 注册创造模式标签
+        CSMCreativeModeTab.register(modEventBus);
         REGISTRATE.registerEventListeners(modEventBus);
-        CSMRecipeTypes.register(modEventBus); // 注册配方类型
+        // 注册配方类型
+        CSMRecipeTypes.register(modEventBus);
+        // 注册方块实体能力
+        modEventBus.addListener(CSMBlockEntities::registerCapabilities);
     }
 }
