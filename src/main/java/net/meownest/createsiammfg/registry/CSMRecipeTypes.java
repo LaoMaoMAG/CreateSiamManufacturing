@@ -19,14 +19,22 @@ import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.content.recipe.JuicingRecipe;
+import net.meownest.createsiammfg.content.recipe.SolderingRecipe;
 
 public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     // ===== 配方类型枚举 =====
 
     /**
-     * 动力榨汁机配方
+     * 榨汁配方
      */
-    JUICING(JuicingRecipe::new);
+    JUICING(JuicingRecipe::new),
+
+    /**
+     * 焊接配方
+     */
+    SOLDERING(SolderingRecipe::new);
+
+
 
     // ===== 配方类型属性 =====
 
