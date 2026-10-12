@@ -18,7 +18,7 @@ import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.meownest.createsiammfg.content.block.kinetics.juicer.JuicingRecipe;
+import net.meownest.createsiammfg.content.recipe.JuicingRecipe;
 
 public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     // ===== 配方类型枚举 =====

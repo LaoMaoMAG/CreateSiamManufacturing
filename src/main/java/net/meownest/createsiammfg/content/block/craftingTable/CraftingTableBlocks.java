@@ -77,7 +77,6 @@ public class CraftingTableBlocks extends Block implements IBE<CraftingTableBlock
         if (stack.isEmpty())
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-
         if (!level.isClientSide) {
             be.setHeldItem(stack.copyWithCount(1));
             if (!player.getAbilities().instabuild)
