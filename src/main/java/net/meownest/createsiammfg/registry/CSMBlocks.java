@@ -11,7 +11,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 
-import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocks;
+import net.meownest.createsiammfg.content.block.engineersWorkbench.EngineersWorkbenchBlocks;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
 import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
 
@@ -38,7 +38,7 @@ public class CSMBlocks {
     /**
      * 手工台
      */
-    public static final BlockEntry<?> CRAFTING_TABLE = REGISTRATE.block("crafting_table", CraftingTableBlocks::new)
+    public static final BlockEntry<?> ENGINEERS_WORKBENCH = REGISTRATE.block("engineers_workbench", EngineersWorkbenchBlocks::new)
             .item()
             .transform(customItemModel())
             .register();

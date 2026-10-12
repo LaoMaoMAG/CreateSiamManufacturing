@@ -53,7 +53,7 @@ public class CSMCreativeModeTab {
                         .setTextShadow(true)
 
                         .add(CSMBlocks.MECHANICAL_JUICER)
-                        .add(CSMBlocks.CRAFTING_TABLE)
+                        .add(CSMBlocks.ENGINEERS_WORKBENCH)
                         .add(CSMBlocks.MECHANICAL_SCREENING)
         );
     }

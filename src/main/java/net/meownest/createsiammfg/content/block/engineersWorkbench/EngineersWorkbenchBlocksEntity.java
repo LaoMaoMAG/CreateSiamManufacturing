@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.block.craftingTable;
+package net.meownest.createsiammfg.content.block.engineersWorkbench;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public class CraftingTableBlocksEntity extends BlockEntity {
+public class EngineersWorkbenchBlocksEntity extends BlockEntity {
 
     private final ItemStackHandler inventory = new ItemStackHandler(1) {
 
@@ -32,7 +32,7 @@ public class CraftingTableBlocksEntity extends BlockEntity {
         }
     };
 
-    public CraftingTableBlocksEntity(
+    public EngineersWorkbenchBlocksEntity(
             BlockEntityType<?> type,
             BlockPos pos,
             BlockState state

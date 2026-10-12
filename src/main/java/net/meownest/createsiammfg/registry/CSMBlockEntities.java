@@ -3,8 +3,8 @@ package net.meownest.createsiammfg.registry;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
-import net.meownest.createsiammfg.client.renderer.CraftingTableRenderer;
-import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocksEntity;
+import net.meownest.createsiammfg.client.renderer.EngineersWorkbenchRenderer;
+import net.meownest.createsiammfg.content.block.engineersWorkbench.EngineersWorkbenchBlocksEntity;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
 import net.meownest.createsiammfg.client.renderer.MechanicalJuicerRenderer;
 import net.meownest.createsiammfg.client.visual.MechanicalJuicerVisual;
@@ -31,10 +31,10 @@ public class CSMBlockEntities {
     /**
      * 手工台
      */
-    public static final BlockEntityEntry<CraftingTableBlocksEntity> CRAFTING_TABLE = REGISTRATE
-            .blockEntity("crafting_table", CraftingTableBlocksEntity::new)
-            .validBlocks(CSMBlocks.CRAFTING_TABLE)
-            .renderer(() -> CraftingTableRenderer::new)
+    public static final BlockEntityEntry<EngineersWorkbenchBlocksEntity> CRAFTING_TABLE = REGISTRATE
+            .blockEntity("engineers_workbench", EngineersWorkbenchBlocksEntity::new)
+            .validBlocks(CSMBlocks.ENGINEERS_WORKBENCH)
+            .renderer(() -> EngineersWorkbenchRenderer::new)
             .register();
 
     public static void register() {

@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.block.craftingTable;
+package net.meownest.createsiammfg.content.block.engineersWorkbench;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -24,8 +24,8 @@ import net.meownest.createsiammfg.registry.CSMBlockEntities;
 /**
  * 手工台方块类
  */
-public class CraftingTableBlocks extends Block implements IBE<CraftingTableBlocksEntity> {
-    public CraftingTableBlocks(Properties properties) {
+public class EngineersWorkbenchBlocks extends Block implements IBE<EngineersWorkbenchBlocksEntity> {
+    public EngineersWorkbenchBlocks(Properties properties) {
         super(properties);
     }
 
@@ -43,12 +43,12 @@ public class CraftingTableBlocks extends Block implements IBE<CraftingTableBlock
     }
 
     @Override
-    public Class<CraftingTableBlocksEntity> getBlockEntityClass() {
-        return CraftingTableBlocksEntity.class;
+    public Class<EngineersWorkbenchBlocksEntity> getBlockEntityClass() {
+        return EngineersWorkbenchBlocksEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends CraftingTableBlocksEntity> getBlockEntityType() {
+    public BlockEntityType<? extends EngineersWorkbenchBlocksEntity> getBlockEntityType() {
         return CSMBlockEntities.CRAFTING_TABLE.get();
     }
 
@@ -68,7 +68,7 @@ public class CraftingTableBlocks extends Block implements IBE<CraftingTableBlock
         if (hitResult.getDirection() != Direction.UP)
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-        if (!(level.getBlockEntity(pos) instanceof CraftingTableBlocksEntity be))
+        if (!(level.getBlockEntity(pos) instanceof EngineersWorkbenchBlocksEntity be))
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         if (!be.getHeldItem().isEmpty())
@@ -100,7 +100,7 @@ public class CraftingTableBlocks extends Block implements IBE<CraftingTableBlock
         if (hitResult.getDirection() != Direction.UP)
             return InteractionResult.PASS;
 
-        if (!(level.getBlockEntity(pos) instanceof CraftingTableBlocksEntity be))
+        if (!(level.getBlockEntity(pos) instanceof EngineersWorkbenchBlocksEntity be))
             return InteractionResult.PASS;
 
         if (be.getHeldItem().isEmpty())

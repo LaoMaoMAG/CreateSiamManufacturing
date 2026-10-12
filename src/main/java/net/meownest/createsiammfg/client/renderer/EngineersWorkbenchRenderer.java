@@ -12,17 +12,17 @@ import net.minecraft.world.phys.Vec3;
 
 import com.simibubi.create.content.logistics.depot.DepotRenderer;
 
-import net.meownest.createsiammfg.content.block.craftingTable.CraftingTableBlocksEntity;
+import net.meownest.createsiammfg.content.block.engineersWorkbench.EngineersWorkbenchBlocksEntity;
 
 
-public class CraftingTableRenderer implements BlockEntityRenderer<CraftingTableBlocksEntity> {
+public class EngineersWorkbenchRenderer implements BlockEntityRenderer<EngineersWorkbenchBlocksEntity> {
 
-    public CraftingTableRenderer(BlockEntityRendererProvider.Context ignoredContext) {
+    public EngineersWorkbenchRenderer(BlockEntityRendererProvider.Context ignoredContext) {
     }
 
     @Override
     public void render(
-            CraftingTableBlocksEntity be,
+            EngineersWorkbenchBlocksEntity be,
             float partialTick,
             PoseStack poseStack,
             MultiBufferSource buffer,
