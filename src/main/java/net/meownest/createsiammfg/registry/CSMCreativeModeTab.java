@@ -15,7 +15,11 @@ public class CSMCreativeModeTab {
      * @param modEventBus MOD 事件总线
      */
     public static void register(IEventBus modEventBus) {
-        FancyTabSections.registerCreativeModeTab(modEventBus, CreateSiamManufacturing.rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
+        FancyTabSections.registerCreativeModeTab(
+                modEventBus,
+                CreateSiamManufacturing.rl("mod_tab"),
+                CSMItems.ELECTRIC_SOLDERING_IRON
+        );
 
         // 工具
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
