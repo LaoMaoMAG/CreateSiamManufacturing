@@ -23,7 +23,7 @@ public class SolderingRecipe extends StandardProcessingRecipe<RecipeInput> {
     protected int getMaxOutputCount() {
         return 0;
     }
-
+    
     @Override
     public boolean matches(RecipeInput recipeInput, Level level) {
         return false;
