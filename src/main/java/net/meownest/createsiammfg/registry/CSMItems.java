@@ -49,6 +49,21 @@ public class CSMItems {
       */
      public static final DeferredItem<Item> ROSIN = ITEMS.registerSimpleItem("rosin");
 
+     /**
+      * 锤子
+      */
+     public static final DeferredItem<Item> HAMMER = ITEMS.registerSimpleItem("hammer");
+
+    /**
+     * 螺丝刀
+     */
+    public static final DeferredItem<Item> SCREWDRIVER = ITEMS.registerSimpleItem("screwdriver");
+
+    /**
+     * 弹簧
+     */
+    public static final DeferredItem<Item> SPRING = ITEMS.registerSimpleItem("spring");
+
     /**
      * 物品注册
      */

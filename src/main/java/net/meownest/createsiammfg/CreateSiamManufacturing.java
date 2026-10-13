@@ -27,7 +27,7 @@ public class CreateSiamManufacturing {
     /**
      * 初始化模组
      *
-     * @param modEventBus  模组事件总线
+     * @param modEventBus 模组事件总线
      */
     public CreateSiamManufacturing(IEventBus modEventBus) {
         LOGGER.info("Create Siam Manufacturing is loading!");

@@ -17,6 +17,7 @@ public class CSMCreativeModeTab {
     public static void register(IEventBus modEventBus) {
         FancyTabSections.registerCreativeModeTab(modEventBus, CreateSiamManufacturing.rl("mod_tab"), CSMItems.ELECTRIC_SOLDERING_IRON);
 
+        // 工具
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 new SectionAnimatedTextured(CreateSiamManufacturing.rl("tools"))
                         .setFrames(8)
@@ -29,8 +30,11 @@ public class CSMCreativeModeTab {
                         .add(CSMItems.ELECTRIC_SOLDERING_IRON)
                         .add(CSMItems.ADVANCED_SOLDERING_IRON)
                         .add(CSMItems.SOLDER_SUCKER)
+                        .add(CSMItems.HAMMER)
+                        .add(CSMItems.SCREWDRIVER)
         );
 
+        // 材料
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 new SectionAnimatedTextured(CreateSiamManufacturing.rl("material"))
                         .setFrames(8)
@@ -42,8 +46,10 @@ public class CSMCreativeModeTab {
                         .add(CSMItems.BLADE_HEAD)
                         .add(CSMItems.SOLDER_WIRE)
                         .add(CSMItems.ROSIN)
+                        .add(CSMItems.SPRING)
         );
 
+        // 机器
         FancyTabSections.addSection(CreateSiamManufacturing.rl("mod_tab"),
                 new SectionAnimatedTextured(CreateSiamManufacturing.rl("machine"))
                         .setFrames(4)

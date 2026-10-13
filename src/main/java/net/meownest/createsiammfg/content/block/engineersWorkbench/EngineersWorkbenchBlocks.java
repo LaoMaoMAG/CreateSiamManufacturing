@@ -30,15 +30,8 @@ import java.util.List;
  * 手工台方块类
  */
 public class EngineersWorkbenchBlocks extends Block implements IBE<EngineersWorkbenchBlocksEntity> {
-
-    public List<Item> ToolList = List.of();
-
     public EngineersWorkbenchBlocks(Properties properties) {
         super(properties);
-
-        ToolList.add(CSMItems.SOLDERING_IRON.get());
-        ToolList.add(CSMItems.ELECTRIC_SOLDERING_IRON.get());
-        ToolList.add(CSMItems.ADVANCED_SOLDERING_IRON.get());
     }
 
     /**
