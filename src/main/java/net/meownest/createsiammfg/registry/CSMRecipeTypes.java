@@ -1,6 +1,7 @@
 package net.meownest.createsiammfg.registry;
 
 import java.util.Locale;
+import java.util.function.Supplier;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -16,10 +17,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.content.recipe.JuicingRecipe;
 import net.meownest.createsiammfg.content.recipe.SolderingRecipe;
+import net.meownest.createsiammfg.content.recipe.params.SolderingRecipeParams;
 
 public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     // ===== 配方类型枚举 =====
@@ -33,8 +36,6 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
      * 焊接配方
      */
     SOLDERING(SolderingRecipe::new);
-
-
 
     // ===== 配方类型属性 =====
 
@@ -54,20 +55,39 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     private final DeferredHolder<RecipeType<?>, RecipeType<?>> type;
 
     /**
-     * 枚举构造器
+     * Create 标准加工配方
      */
     CSMRecipeTypes(StandardProcessingRecipe.Factory<?> factory) {
-        // 设置配方资源 ID
-        this.id = CreateSiamManufacturing.rl(name().toLowerCase(Locale.ROOT));
-
-        // 注册配方序列化器
-        // 使用 Create 的 StandardProcessingRecipe.Serializer
-        this.serializer = Registers.SERIALIZERS.register(name().toLowerCase(Locale.ROOT),
-                () -> new StandardProcessingRecipe.Serializer<>(factory));
-        // 注册配方类型
-        this.type = Registers.TYPES.register(name().toLowerCase(Locale.ROOT),
-                () -> RecipeType.simple(id));
+        this(() -> new StandardProcessingRecipe.Serializer<>(factory));
     }
+
+    /**
+     * 焊接自定义参数配方
+     */
+    CSMRecipeTypes(ProcessingRecipe.Factory<SolderingRecipeParams, SolderingRecipe> factory) {
+        this(() -> new SolderingRecipe.Serializer(factory));
+    }
+
+    /**
+     * 通用序列化器注册入口
+     */
+    CSMRecipeTypes(Supplier<? extends RecipeSerializer<?>> serializerFactory) {
+        this.id = CreateSiamManufacturing.rl(
+                name().toLowerCase(Locale.ROOT)
+        );
+
+        this.serializer = Registers.SERIALIZERS.register(
+                name().toLowerCase(Locale.ROOT),
+                serializerFactory
+        );
+
+        this.type = Registers.TYPES.register(
+                name().toLowerCase(Locale.ROOT),
+                () -> RecipeType.simple(id)
+        );
+    }
+
+
 
     /**
      * 注册

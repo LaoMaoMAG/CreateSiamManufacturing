@@ -1,0 +1,27 @@
+{
+  "type": "createsiammfg:soldering",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:iron_ingot",
+      "count": 1
+    }
+  ],
+  "failure_chance": 0.15,
+  "failure_results": [
+    {
+      "id": "minecraft:coal",
+      "count": 1
+    },
+    {
+      "id": "minecraft:iron_nugget",
+      "count": 2,
+      "chance": 0.5
+    }
+  ],
+  "soldering_count": 3
+}

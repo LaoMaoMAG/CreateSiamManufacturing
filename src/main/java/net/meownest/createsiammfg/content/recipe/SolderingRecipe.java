@@ -1,31 +1,99 @@
 package net.meownest.createsiammfg.content.recipe;
 
-import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
-import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
+import java.util.List;
+
+import com.mojang.serialization.MapCodec;
+
+import com.simibubi.create.content.processing.recipe.ProcessingOutput;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
+
+import net.meownest.createsiammfg.content.recipe.params.SolderingRecipeParams;
 import net.meownest.createsiammfg.registry.CSMRecipeTypes;
+
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.crafting.RecipeInput;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
 /**
- * 焊接配方类
+ * 焊接配方
  */
-public class SolderingRecipe extends StandardProcessingRecipe<RecipeInput> {
-    public SolderingRecipe(ProcessingRecipeParams params) {
+public class SolderingRecipe
+        extends ProcessingRecipe<RecipeInput, SolderingRecipeParams> {
+
+    public SolderingRecipe(SolderingRecipeParams params) {
         super(CSMRecipeTypes.SOLDERING, params);
+    }
+
+    public float getFailureChance() {
+        return params.getFailureChance();
+    }
+
+    public List<ProcessingOutput> getFailureResults() {
+        return params.getFailureResults();
+    }
+
+    public int getSolderingCount() {
+        return params.getSolderingCount();
     }
 
     @Override
     protected int getMaxInputCount() {
-        return 0;
+        return 1;
     }
 
     @Override
     protected int getMaxOutputCount() {
-        return 0;
+        return 1;
     }
-    
+
+    /**
+     * 输入是否匹配
+     */
     @Override
-    public boolean matches(RecipeInput recipeInput, Level level) {
-        return false;
+    public boolean matches(RecipeInput input, Level level) {
+        return !input.isEmpty()
+                && input.size() == 1
+                && ingredients.size() == 1
+                && ingredients.get(0).test(input.getItem(0));
+    }
+
+    public static class Serializer
+            implements RecipeSerializer<SolderingRecipe> {
+
+        private final MapCodec<SolderingRecipe> codec;
+
+        private final StreamCodec<
+                RegistryFriendlyByteBuf, SolderingRecipe
+                > streamCodec;
+
+        public Serializer(
+                ProcessingRecipe.Factory<
+                        SolderingRecipeParams, SolderingRecipe
+                        > factory
+        ) {
+            codec = ProcessingRecipe.codec(
+                    factory,
+                    SolderingRecipeParams.CODEC
+            );
+
+            streamCodec = ProcessingRecipe.streamCodec(
+                    factory,
+                    SolderingRecipeParams.STREAM_CODEC
+            );
+        }
+
+        @Override
+        public MapCodec<SolderingRecipe> codec() {
+            return codec;
+        }
+
+        @Override
+        public StreamCodec<
+                RegistryFriendlyByteBuf, SolderingRecipe
+                > streamCodec() {
+            return streamCodec;
+        }
     }
 }
