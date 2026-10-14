@@ -4,7 +4,7 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.meownest.createsiammfg.client.renderer.EngineersWorkbenchRenderer;
-import net.meownest.createsiammfg.content.block.engineersWorkbench.EngineersWorkbenchBlocksEntity;
+import net.meownest.createsiammfg.content.block.workbench.EngineersWorkbenchBlockEntity;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
 import net.meownest.createsiammfg.client.renderer.MechanicalJuicerRenderer;
 import net.meownest.createsiammfg.client.visual.MechanicalJuicerVisual;
@@ -29,10 +29,10 @@ public class CSMBlockEntities {
             .register();
 
     /**
-     * 手工台
+     * 工程师加工台
      */
-    public static final BlockEntityEntry<EngineersWorkbenchBlocksEntity> CRAFTING_TABLE = REGISTRATE
-            .blockEntity("engineers_workbench", EngineersWorkbenchBlocksEntity::new)
+    public static final BlockEntityEntry<EngineersWorkbenchBlockEntity> ENGINEERS_WORKBENCH = REGISTRATE
+            .blockEntity("engineers_workbench", EngineersWorkbenchBlockEntity::new)
             .validBlocks(CSMBlocks.ENGINEERS_WORKBENCH)
             .renderer(() -> EngineersWorkbenchRenderer::new)
             .register();
@@ -43,7 +43,7 @@ public class CSMBlockEntities {
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(
                 Capabilities.ItemHandler.BLOCK,
-                CRAFTING_TABLE.get(),
+                ENGINEERS_WORKBENCH.get(),
                 (be, side) -> be.getItemHandler()
         );
     }

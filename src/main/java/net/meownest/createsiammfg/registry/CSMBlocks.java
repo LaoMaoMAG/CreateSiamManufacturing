@@ -1,5 +1,6 @@
 package net.meownest.createsiammfg.registry;
 
+import net.meownest.createsiammfg.content.block.workbench.EngineersWorkbenchBlock;
 import net.minecraft.world.level.material.MapColor;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
@@ -11,7 +12,6 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 
-import net.meownest.createsiammfg.content.block.engineersWorkbench.EngineersWorkbenchBlocks;
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlock;
 import net.meownest.createsiammfg.content.block.kinetics.screening.MechanicalScreeningBlock;
 
@@ -36,9 +36,9 @@ public class CSMBlocks {
             .register();
 
     /**
-     * 手工台
+     * 工程师加工台
      */
-    public static final BlockEntry<?> ENGINEERS_WORKBENCH = REGISTRATE.block("engineers_workbench", EngineersWorkbenchBlocks::new)
+    public static final BlockEntry<?> ENGINEERS_WORKBENCH = REGISTRATE.block("engineers_workbench", EngineersWorkbenchBlock::new)
             .item()
             .transform(customItemModel())
             .register();

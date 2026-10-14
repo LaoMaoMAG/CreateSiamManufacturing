@@ -1,9 +1,6 @@
-package net.meownest.createsiammfg.content.block.engineersWorkbench;
+package net.meownest.createsiammfg.content.block.workbench;
 
-import com.tterrag.registrate.util.entry.BlockEntry;
-import net.meownest.createsiammfg.registry.CSMItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Block;
@@ -24,13 +21,11 @@ import com.simibubi.create.AllShapes;
 
 import net.meownest.createsiammfg.registry.CSMBlockEntities;
 
-import java.util.List;
-
 /**
  * 手工台方块类
  */
-public class EngineersWorkbenchBlocks extends Block implements IBE<EngineersWorkbenchBlocksEntity> {
-    public EngineersWorkbenchBlocks(Properties properties) {
+public class EngineersWorkbenchBlock extends Block implements IBE<EngineersWorkbenchBlockEntity> {
+    public EngineersWorkbenchBlock(Properties properties) {
         super(properties);
     }
 
@@ -48,13 +43,13 @@ public class EngineersWorkbenchBlocks extends Block implements IBE<EngineersWork
     }
 
     @Override
-    public Class<EngineersWorkbenchBlocksEntity> getBlockEntityClass() {
-        return EngineersWorkbenchBlocksEntity.class;
+    public Class<EngineersWorkbenchBlockEntity> getBlockEntityClass() {
+        return EngineersWorkbenchBlockEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends EngineersWorkbenchBlocksEntity> getBlockEntityType() {
-        return CSMBlockEntities.CRAFTING_TABLE.get();
+    public BlockEntityType<? extends EngineersWorkbenchBlockEntity> getBlockEntityType() {
+        return CSMBlockEntities.ENGINEERS_WORKBENCH.get();
     }
 
     /**
@@ -73,7 +68,7 @@ public class EngineersWorkbenchBlocks extends Block implements IBE<EngineersWork
         if (hitResult.getDirection() != Direction.UP)
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-        if (!(level.getBlockEntity(pos) instanceof EngineersWorkbenchBlocksEntity be))
+        if (!(level.getBlockEntity(pos) instanceof EngineersWorkbenchBlockEntity be))
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
         if (!be.getHeldItem().isEmpty())
@@ -105,7 +100,7 @@ public class EngineersWorkbenchBlocks extends Block implements IBE<EngineersWork
         if (hitResult.getDirection() != Direction.UP)
             return InteractionResult.PASS;
 
-        if (!(level.getBlockEntity(pos) instanceof EngineersWorkbenchBlocksEntity be))
+        if (!(level.getBlockEntity(pos) instanceof EngineersWorkbenchBlockEntity be))
             return InteractionResult.PASS;
 
         if (be.getHeldItem().isEmpty())

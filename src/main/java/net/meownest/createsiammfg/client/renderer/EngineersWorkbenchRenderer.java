@@ -12,17 +12,17 @@ import net.minecraft.world.phys.Vec3;
 
 import com.simibubi.create.content.logistics.depot.DepotRenderer;
 
-import net.meownest.createsiammfg.content.block.engineersWorkbench.EngineersWorkbenchBlocksEntity;
+import net.meownest.createsiammfg.content.block.workbench.EngineersWorkbenchBlockEntity;
 
 
-public class EngineersWorkbenchRenderer implements BlockEntityRenderer<EngineersWorkbenchBlocksEntity> {
+public class EngineersWorkbenchRenderer implements BlockEntityRenderer<EngineersWorkbenchBlockEntity> {
 
     public EngineersWorkbenchRenderer(BlockEntityRendererProvider.Context ignoredContext) {
     }
 
     @Override
     public void render(
-            EngineersWorkbenchBlocksEntity be,
+            EngineersWorkbenchBlockEntity be,
             float partialTick,
             PoseStack poseStack,
             MultiBufferSource buffer,

@@ -4,17 +4,17 @@ import java.util.List;
 
 import com.mojang.serialization.MapCodec;
 
-import com.simibubi.create.content.processing.recipe.ProcessingOutput;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
-
-import net.meownest.createsiammfg.recipe.params.SolderingRecipeParams;
-import net.meownest.createsiammfg.registry.CSMRecipeTypes;
-
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
+
+import com.simibubi.create.content.processing.recipe.ProcessingOutput;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
+
+import net.meownest.createsiammfg.recipe.params.SolderingRecipeParams;
+import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 
 /**
  * 焊接配方

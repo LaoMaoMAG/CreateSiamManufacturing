@@ -7,15 +7,15 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import com.simibubi.create.content.processing.recipe.ProcessingOutput;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
-
-import net.createmod.catnip.codecs.stream.CatnipStreamCodecBuilders;
-
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
+
+import net.createmod.catnip.codecs.stream.CatnipStreamCodecBuilders;
+
+import com.simibubi.create.content.processing.recipe.ProcessingOutput;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
 
 /**
  * 焊接配方参数
@@ -53,12 +53,6 @@ public class SolderingRecipeParams extends ProcessingRecipeParams {
                 return params;
             }));
 
-    /**
-     * 网络编解码器
-     *
-     * 复用 Create 的 streamCodec，
-     * 通过重写 encode 和 decode 追加自定义字段。
-     */
     public static final StreamCodec<
             RegistryFriendlyByteBuf, SolderingRecipeParams
             > STREAM_CODEC = streamCodec(SolderingRecipeParams::new);
