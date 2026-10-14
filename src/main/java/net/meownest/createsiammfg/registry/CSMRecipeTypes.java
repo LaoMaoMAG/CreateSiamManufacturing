@@ -20,9 +20,9 @@ import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.meownest.createsiammfg.content.recipe.JuicingRecipe;
-import net.meownest.createsiammfg.content.recipe.SolderingRecipe;
-import net.meownest.createsiammfg.content.recipe.params.SolderingRecipeParams;
+import net.meownest.createsiammfg.recipe.JuicingRecipe;
+import net.meownest.createsiammfg.recipe.SolderingRecipe;
+import net.meownest.createsiammfg.recipe.params.SolderingRecipeParams;
 
 public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     // ===== 配方类型枚举 =====

@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.recipe.params;
+package net.meownest.createsiammfg.recipe.params;
 
 import java.util.List;
 import java.util.function.Function;

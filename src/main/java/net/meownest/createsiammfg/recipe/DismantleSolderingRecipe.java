@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.recipe;
+package net.meownest.createsiammfg.recipe;
 
 /**
  * 拆焊配方类

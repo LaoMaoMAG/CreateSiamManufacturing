@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.recipe;
+package net.meownest.createsiammfg.recipe;
 
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
