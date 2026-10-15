@@ -1,10 +1,10 @@
 package net.meownest.createsiammfg.foundation.handmade;
 
-import net.minecraft.world.item.Item;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+import net.minecraft.world.item.Item;
 
 public class Handmade {
     private static final Set<Item> TOOL_SET = new HashSet<>();

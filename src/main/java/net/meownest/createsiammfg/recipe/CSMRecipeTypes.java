@@ -20,7 +20,6 @@ import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 
-
 /**
  * CSM 配方类型
  */
