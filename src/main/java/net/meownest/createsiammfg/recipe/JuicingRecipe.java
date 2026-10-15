@@ -1,8 +1,7 @@
-package net.meownest.createsiammfg.recipe.recipe;
+package net.meownest.createsiammfg.recipe;
 
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
-import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 
 /**
  * 榨汁配方，继承 BasinRecipe(工作盆)

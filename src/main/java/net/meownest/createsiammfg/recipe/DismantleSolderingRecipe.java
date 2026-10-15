@@ -1,8 +1,7 @@
-package net.meownest.createsiammfg.recipe.recipe;
+package net.meownest.createsiammfg.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
-import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 import net.meownest.createsiammfg.recipe.params.DismantleSolderingRecipeParams;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;

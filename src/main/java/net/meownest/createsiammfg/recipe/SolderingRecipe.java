@@ -1,10 +1,9 @@
-package net.meownest.createsiammfg.recipe.recipe;
+package net.meownest.createsiammfg.recipe;
 
 import java.util.List;
 
 import com.mojang.serialization.MapCodec;
 
-import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.crafting.RecipeInput;

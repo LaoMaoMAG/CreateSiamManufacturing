@@ -3,9 +3,6 @@ package net.meownest.createsiammfg.recipe;
 import java.util.Locale;
 import java.util.function.Supplier;
 
-import net.meownest.createsiammfg.recipe.recipe.DismantleSolderingRecipe;
-import net.meownest.createsiammfg.recipe.recipe.JuicingRecipe;
-import net.meownest.createsiammfg.recipe.recipe.SolderingRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
