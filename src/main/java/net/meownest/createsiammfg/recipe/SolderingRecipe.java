@@ -19,8 +19,7 @@ import net.meownest.createsiammfg.registry.CSMRecipeTypes;
 /**
  * 焊接配方
  */
-public class SolderingRecipe
-        extends ProcessingRecipe<RecipeInput, SolderingRecipeParams> {
+public class SolderingRecipe extends ProcessingRecipe<RecipeInput, SolderingRecipeParams> {
 
     public SolderingRecipe(SolderingRecipeParams params) {
         super(CSMRecipeTypes.SOLDERING, params);
@@ -59,29 +58,15 @@ public class SolderingRecipe
                 && ingredients.get(0).test(input.getItem(0));
     }
 
-    public static class Serializer
-            implements RecipeSerializer<SolderingRecipe> {
+    public static class Serializer implements RecipeSerializer<SolderingRecipe> {
 
         private final MapCodec<SolderingRecipe> codec;
 
-        private final StreamCodec<
-                RegistryFriendlyByteBuf, SolderingRecipe
-                > streamCodec;
+        private final StreamCodec<RegistryFriendlyByteBuf, SolderingRecipe> streamCodec;
 
-        public Serializer(
-                ProcessingRecipe.Factory<
-                        SolderingRecipeParams, SolderingRecipe
-                        > factory
-        ) {
-            codec = ProcessingRecipe.codec(
-                    factory,
-                    SolderingRecipeParams.CODEC
-            );
-
-            streamCodec = ProcessingRecipe.streamCodec(
-                    factory,
-                    SolderingRecipeParams.STREAM_CODEC
-            );
+        public Serializer(ProcessingRecipe.Factory<SolderingRecipeParams, SolderingRecipe> factory) {
+            codec = ProcessingRecipe.codec(factory, SolderingRecipeParams.CODEC);
+            streamCodec = ProcessingRecipe.streamCodec(factory, SolderingRecipeParams.STREAM_CODEC);
         }
 
         @Override
@@ -90,9 +75,7 @@ public class SolderingRecipe
         }
 
         @Override
-        public StreamCodec<
-                RegistryFriendlyByteBuf, SolderingRecipe
-                > streamCodec() {
+        public StreamCodec<RegistryFriendlyByteBuf, SolderingRecipe> streamCodec() {
             return streamCodec;
         }
     }

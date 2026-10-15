@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.handmade;
+package net.meownest.createsiammfg.foundation.handmade;
 
 import net.minecraft.world.item.Item;
 
