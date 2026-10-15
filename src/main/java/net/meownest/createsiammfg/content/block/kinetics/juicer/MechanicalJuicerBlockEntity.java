@@ -45,7 +45,7 @@ import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.data.Couple;
 import net.createmod.catnip.math.VecHelper;
 
-import net.meownest.createsiammfg.registry.CSMRecipeTypes;
+import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 
 public class MechanicalJuicerBlockEntity  extends BasinOperatingBlockEntity {
 

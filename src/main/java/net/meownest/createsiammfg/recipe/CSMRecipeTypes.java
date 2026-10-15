@@ -1,8 +1,11 @@
-package net.meownest.createsiammfg.registry;
+package net.meownest.createsiammfg.recipe;
 
 import java.util.Locale;
 import java.util.function.Supplier;
 
+import net.meownest.createsiammfg.recipe.recipe.DismantleSolderingRecipe;
+import net.meownest.createsiammfg.recipe.recipe.JuicingRecipe;
+import net.meownest.createsiammfg.recipe.recipe.SolderingRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -17,60 +20,35 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.meownest.createsiammfg.recipe.JuicingRecipe;
-import net.meownest.createsiammfg.recipe.SolderingRecipe;
-import net.meownest.createsiammfg.recipe.params.SolderingRecipeParams;
 
-public enum CSMRecipeTypes  implements IRecipeTypeInfo {
-    // ===== 配方类型枚举 =====
 
+/**
+ * CSM 配方类型
+ */
+public enum CSMRecipeTypes implements IRecipeTypeInfo {
     /**
      * 榨汁配方
      */
-    JUICING(JuicingRecipe::new),
+    JUICING(() -> new StandardProcessingRecipe.Serializer<>(JuicingRecipe::new)),
 
     /**
      * 焊接配方
      */
-    SOLDERING(SolderingRecipe::new);
-
-    // ===== 配方类型属性 =====
+    SOLDERING(() -> new SolderingRecipe.Serializer(SolderingRecipe::new)),
 
     /**
-     * 配方类型资源 ID
+     * 拆接配方
      */
+    DISMANTLE_SOLDERING(() -> new DismantleSolderingRecipe.Serializer(DismantleSolderingRecipe::new));
+
     public final ResourceLocation id;
 
-    /**
-     * 配方序列化器 DeferredHolder
-     */
     private final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<?>> serializer;
 
-    /**
-     * 配方类型 DeferredHolder
-     */
     private final DeferredHolder<RecipeType<?>, RecipeType<?>> type;
 
-    /**
-     * Create 标准加工配方
-     */
-    CSMRecipeTypes(StandardProcessingRecipe.Factory<?> factory) {
-        this(() -> new StandardProcessingRecipe.Serializer<>(factory));
-    }
-
-    /**
-     * 焊接自定义参数配方
-     */
-    CSMRecipeTypes(ProcessingRecipe.Factory<SolderingRecipeParams, SolderingRecipe> factory) {
-        this(() -> new SolderingRecipe.Serializer(factory));
-    }
-
-    /**
-     * 通用序列化器注册入口
-     */
     CSMRecipeTypes(Supplier<? extends RecipeSerializer<?>> serializerFactory) {
         this.id = CreateSiamManufacturing.rl(
                 name().toLowerCase(Locale.ROOT)
@@ -87,17 +65,10 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
         );
     }
 
-
-
-    /**
-     * 注册
-     */
     public static void register(IEventBus bus) {
         Registers.SERIALIZERS.register(bus);
         Registers.TYPES.register(bus);
     }
-
-    // ===== IRecipeTypeInfo 接口实现 =====
 
     /**
      * 返回配方 ID
@@ -108,7 +79,7 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     }
 
     /**
-     * 返回配方序列化器实例
+     * 返回配方序列化器
      */
     @Override
     @SuppressWarnings("unchecked")
@@ -117,7 +88,7 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
     }
 
     /**
-     * 返回配方类型实例
+     * 返回配方类型
      */
     @Override
     @SuppressWarnings("unchecked")
@@ -125,13 +96,9 @@ public enum CSMRecipeTypes  implements IRecipeTypeInfo {
         return (RecipeType<R>) type.get();
     }
 
-    // ===== 内部静态类 =====
-
     private static class Registers {
-        // 配方序列化器注册器
         static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
                 DeferredRegister.create(BuiltInRegistries.RECIPE_SERIALIZER, CreateSiamManufacturing.MOD_ID);
-        // 配方类型注册器
         static final DeferredRegister<RecipeType<?>> TYPES =
                 DeferredRegister.create(Registries.RECIPE_TYPE, CreateSiamManufacturing.MOD_ID);
     }

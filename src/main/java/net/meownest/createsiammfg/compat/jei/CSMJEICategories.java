@@ -9,7 +9,7 @@ import com.simibubi.create.content.processing.basin.BasinRecipe;
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.compat.jei.category.MechanicalJuicingCategory;
 import net.meownest.createsiammfg.registry.CSMBlocks;
-import net.meownest.createsiammfg.registry.CSMRecipeTypes;
+import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 
 public class CSMJEICategories {
     public static final CreateRecipeCategory<BasinRecipe> MECHANICAL_JUICER =

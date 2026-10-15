@@ -1,5 +1,6 @@
 package net.meownest.createsiammfg.registry;
 
+import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 

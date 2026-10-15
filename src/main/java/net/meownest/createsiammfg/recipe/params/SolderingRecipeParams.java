@@ -53,16 +53,11 @@ public class SolderingRecipeParams extends ProcessingRecipeParams {
                 return params;
             }));
 
-    public static final StreamCodec<
-            RegistryFriendlyByteBuf, SolderingRecipeParams
-            > STREAM_CODEC = streamCodec(SolderingRecipeParams::new);
+    public static final StreamCodec<RegistryFriendlyByteBuf, SolderingRecipeParams> STREAM_CODEC =
+            streamCodec(SolderingRecipeParams::new);
 
-    private static final StreamCodec<
-            RegistryFriendlyByteBuf, NonNullList<ProcessingOutput>
-            > FAILURE_RESULTS_CODEC =
-            CatnipStreamCodecBuilders.nonNullList(
-                    ProcessingOutput.STREAM_CODEC
-            );
+    private static final StreamCodec<RegistryFriendlyByteBuf, NonNullList<ProcessingOutput>> FAILURE_RESULTS_CODEC =
+            CatnipStreamCodecBuilders.nonNullList(ProcessingOutput.STREAM_CODEC);
 
     /**
      * 失败概率
