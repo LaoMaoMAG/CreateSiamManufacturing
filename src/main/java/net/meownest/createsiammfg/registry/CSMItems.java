@@ -2,72 +2,74 @@ package net.meownest.createsiammfg.registry;
 
 import net.minecraft.world.item.Item;
 
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import com.tterrag.registrate.util.entry.ItemEntry;
 
-import net.meownest.createsiammfg.CreateSiamManufacturing;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+
+import net.meownest.createsiammfg.content.item.HammerItem;
+import net.meownest.createsiammfg.content.item.soldering_iron.SolderingIronItem;
+import net.meownest.createsiammfg.content.item.soldering_iron.ElectricSolderingIron;
 
 /**
  * CSM 物品注册表
  */
 public class CSMItems {
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateSiamManufacturing.MOD_ID);
+    private static final CreateRegistrate REGISTRATE = CSMRegistrate.REGISTRATE;
 
     /**
      * 刀头
      */
-    public static final DeferredItem<Item> BLADE_HEAD = ITEMS.registerSimpleItem("blade_head");
+    public static final ItemEntry<Item> BLADE_HEAD = REGISTRATE.item("blade_head", Item::new).register();
 
     /**
      * 烙铁
      */
-    public static final DeferredItem<Item> SOLDERING_IRON = ITEMS.registerSimpleItem("soldering_iron");
+    public static final ItemEntry<SolderingIronItem> SOLDERING_IRON = REGISTRATE.item("soldering_iron", SolderingIronItem::new).register();
 
     /**
      * 电烙铁
      */
-    public static final DeferredItem<Item> ELECTRIC_SOLDERING_IRON = ITEMS.registerSimpleItem("electric_soldering_iron");
+    public static final ItemEntry<ElectricSolderingIron> ELECTRIC_SOLDERING_IRON = REGISTRATE.item("electric_soldering_iron", ElectricSolderingIron::new).register();
 
     /**
      * 高级电烙铁
      */
-    public static final DeferredItem<Item> ADVANCED_SOLDERING_IRON = ITEMS.registerSimpleItem("advanced_soldering_iron");
+    public static final ItemEntry<Item> ADVANCED_SOLDERING_IRON = REGISTRATE.item("advanced_soldering_iron", Item::new).register();
 
     /**
      * 吸锡器
      */
-     public static final DeferredItem<Item> SOLDER_SUCKER = ITEMS.registerSimpleItem("solder_sucker");
+    public static final ItemEntry<Item> SOLDER_SUCKER = REGISTRATE.item("solder_sucker", Item::new).register();
 
-     /**
-      * 焊锡丝
-      */
-     public static final DeferredItem<Item> SOLDER_WIRE = ITEMS.registerSimpleItem("solder_wire");
+    /**
+     * 焊锡丝
+     */
+    public static final ItemEntry<Item> SOLDER_WIRE = REGISTRATE.item("solder_wire", Item::new).register();
 
-     /**
-      * 松香
-      */
-     public static final DeferredItem<Item> ROSIN = ITEMS.registerSimpleItem("rosin");
+    /**
+     * 松香
+     */
+    public static final ItemEntry<Item> ROSIN = REGISTRATE.item("rosin", Item::new).register();
 
-     /**
-      * 锤子
-      */
-     public static final DeferredItem<Item> HAMMER = ITEMS.registerSimpleItem("hammer");
+    /**
+     * 锤子
+     */
+    public static final ItemEntry<HammerItem> HAMMER = REGISTRATE.item("hammer", HammerItem::new).register();
 
     /**
      * 螺丝刀
      */
-    public static final DeferredItem<Item> SCREWDRIVER = ITEMS.registerSimpleItem("screwdriver");
+    public static final ItemEntry<Item> SCREWDRIVER = REGISTRATE.item("screwdriver", Item::new).register();
 
     /**
      * 弹簧
      */
-    public static final DeferredItem<Item> SPRING = ITEMS.registerSimpleItem("spring");
+    public static final ItemEntry<Item> SPRING = REGISTRATE.item("spring", Item::new).register();
 
     /**
      * 物品注册
      */
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
+    public static void register() {
+
     }
 }

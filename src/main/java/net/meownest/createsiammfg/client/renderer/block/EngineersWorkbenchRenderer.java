@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.client.renderer;
+package net.meownest.createsiammfg.client.renderer.block;
 
 import java.util.Random;
 

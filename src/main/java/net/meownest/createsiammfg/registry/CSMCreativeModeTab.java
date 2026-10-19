@@ -18,7 +18,7 @@ public class CSMCreativeModeTab {
         FancyTabSections.registerCreativeModeTab(
                 modEventBus,
                 CreateSiamManufacturing.rl("mod_tab"),
-                CSMItems.ELECTRIC_SOLDERING_IRON
+                () -> CSMItems.ELECTRIC_SOLDERING_IRON.get().getDefaultInstance()
         );
 
         // 工具

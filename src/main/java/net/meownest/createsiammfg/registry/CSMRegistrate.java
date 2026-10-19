@@ -23,10 +23,11 @@ public class CSMRegistrate {
         // 注册方块实体
         CSMBlockEntities.register();
         // 注册物品
-        CSMItems.register(modEventBus);
+        CSMItems.register();
+        // 注册事件监听器
+        REGISTRATE.registerEventListeners(modEventBus);
         // 注册创造模式标签
         CSMCreativeModeTab.register(modEventBus);
-        REGISTRATE.registerEventListeners(modEventBus);
         // 注册配方类型
         CSMRecipeTypes.register(modEventBus);
         // 注册方块实体能力
