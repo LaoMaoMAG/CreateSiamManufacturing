@@ -3,7 +3,7 @@
   "gui_light": "front",
 
   "base": {
-    "parent": "createsiammfg:item/solder_sucker/item"
+    "parent": "createsiammfg:item/solder_sucker/item_0"
   },
 
   "perspectives": {
@@ -28,5 +28,20 @@
     "fixed": {
       "parent": "createsiammfg:item/solder_sucker/model"
     }
-  }
+  },
+
+  "overrides": [
+    {
+      "predicate": {
+        "createsiammfg:charge": 0.01
+      },
+      "model": "createsiammfg:item/solder_sucker/gui_1"
+    },
+    {
+      "predicate": {
+        "createsiammfg:charge": 1.0
+      },
+      "model": "createsiammfg:item/solder_sucker/gui_2"
+    }
+  ]
 }

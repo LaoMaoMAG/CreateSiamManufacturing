@@ -1,0 +1,27 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "createsiammfg:item/solder_sucker/item_2"
+  },
+  "perspectives": {
+    "ground": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "firstperson_righthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "firstperson_lefthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "thirdperson_righthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    },
+    "fixed": {
+      "parent": "createsiammfg:item/solder_sucker/model"
+    }
+  }
+}
