@@ -6,22 +6,22 @@
   },
   "perspectives": {
     "ground": {
-      "parent": "createsiammfg:item/solder_sucker/model"
+      "parent": "createsiammfg:item/solder_sucker/model_1"
     },
     "firstperson_righthand": {
-      "parent": "createsiammfg:item/solder_sucker/model"
+      "parent": "createsiammfg:item/solder_sucker/model_1"
     },
     "firstperson_lefthand": {
-      "parent": "createsiammfg:item/solder_sucker/model"
+      "parent": "createsiammfg:item/solder_sucker/model_1"
     },
     "thirdperson_righthand": {
-      "parent": "createsiammfg:item/solder_sucker/model"
+      "parent": "createsiammfg:item/solder_sucker/model_1"
     },
     "thirdperson_lefthand": {
-      "parent": "createsiammfg:item/solder_sucker/model"
+      "parent": "createsiammfg:item/solder_sucker/model_1"
     },
     "fixed": {
-      "parent": "createsiammfg:item/solder_sucker/model"
+      "parent": "createsiammfg:item/solder_sucker/model_1"
     }
   }
 }
