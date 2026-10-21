@@ -19,12 +19,12 @@ public class SolderSuckerItem extends Item {
     /**
      * 最大使用时间
      */
-    private static final int MAX_USE_TICKS = 72000;
+    public static final int MAX_USE_TICKS = 72000;
 
     /**
      * 蓄力时间
      */
-    private static final int CHARGE_TICKS = 40;
+    public static final int CHARGE_TICKS = 40;
 
     /**
      * 就绪状态数据键
@@ -46,7 +46,7 @@ public class SolderSuckerItem extends Item {
      * @param stack 吸锡器物品栈
      * @return 是否准备就绪
      */
-    public boolean isReady(ItemStack stack) {
+    public static boolean isReady(ItemStack stack) {
         return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean(READY_KEY);
     }
 
@@ -56,7 +56,7 @@ public class SolderSuckerItem extends Item {
      * @param stack 吸锡器物品栈
      * @param ready 是否准备就绪
      */
-    public void setReady(ItemStack stack, boolean ready) {
+    public static void setReady(ItemStack stack, boolean ready) {
         CustomData.update(DataComponents.CUSTOM_DATA, stack, tag -> {
             if (ready) tag.putBoolean(READY_KEY, true);
             else tag.remove(READY_KEY);
@@ -69,7 +69,7 @@ public class SolderSuckerItem extends Item {
      * @param stack 吸锡器物品栈
      * @return 是否已发射
      */
-    public boolean isFire(ItemStack stack) {
+    public static boolean isFire(ItemStack stack) {
         return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean(FIRE_KEY);
     }
 
@@ -79,7 +79,7 @@ public class SolderSuckerItem extends Item {
      * @param stack 吸锡器物品栈
      * @param fire 是否已发射
      */
-    public void setFire(ItemStack stack, boolean fire) {
+    public static void setFire(ItemStack stack, boolean fire) {
         CustomData.update(DataComponents.CUSTOM_DATA, stack, tag -> {
             if (fire) tag.putBoolean(FIRE_KEY, true);
             else tag.remove(FIRE_KEY);
