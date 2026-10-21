@@ -14,8 +14,14 @@ public class CSMPartialModels {
      */
     public static final PartialModel MECHANICAL_JUICER_HEAD = block("mechanical_juicer/head");
 
+
+
     private static PartialModel block(String path) {
-        return PartialModel.of(ResourceLocation.fromNamespaceAndPath(CreateSiamManufacturing.MOD_ID, "block/" + path));
+        return PartialModel.of(CreateSiamManufacturing.rl("block/" + path));
+    }
+
+    private static PartialModel item(String path) {
+        return PartialModel.of(CreateSiamManufacturing.rl("item/" + path));
     }
 
     public static void init() {
