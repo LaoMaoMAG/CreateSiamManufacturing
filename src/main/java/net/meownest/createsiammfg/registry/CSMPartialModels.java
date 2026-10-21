@@ -1,6 +1,5 @@
 package net.meownest.createsiammfg.registry;
 
-import net.minecraft.resources.ResourceLocation;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
@@ -14,7 +13,15 @@ public class CSMPartialModels {
      */
     public static final PartialModel MECHANICAL_JUICER_HEAD = block("mechanical_juicer/head");
 
+    /**
+     * 吸锡器推杆
+     */
+    public static final PartialModel SOLDER_SUCKER_PUSH = block("solder_sucker/push");
 
+    /**
+     * 吸锡器圆筒
+     */
+    public static final PartialModel SOLDER_SUCKER_TUBE = block("solder_sucker/tube");
 
     private static PartialModel block(String path) {
         return PartialModel.of(CreateSiamManufacturing.rl("block/" + path));

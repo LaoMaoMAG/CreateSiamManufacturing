@@ -1,47 +1,6 @@
 {
-  "loader": "neoforge:separate_transforms",
-  "gui_light": "front",
-
-  "base": {
-    "parent": "createsiammfg:item/solder_sucker/item_0"
-  },
-
-  "perspectives": {
-    "ground": {
-      "parent": "createsiammfg:item/solder_sucker/model_0"
-    },
-
-    "firstperson_righthand": {
-      "parent": "createsiammfg:item/solder_sucker/model_0"
-    },
-    "firstperson_lefthand": {
-      "parent": "createsiammfg:item/solder_sucker/model_0"
-    },
-
-    "thirdperson_righthand": {
-      "parent": "createsiammfg:item/solder_sucker/model_0"
-    },
-    "thirdperson_lefthand": {
-      "parent": "createsiammfg:item/solder_sucker/model_0"
-    },
-
-    "fixed": {
-      "parent": "createsiammfg:item/solder_sucker/model_0"
-    }
-  },
-
-  "overrides": [
-    {
-      "predicate": {
-        "createsiammfg:charge": 0.01
-      },
-      "model": "createsiammfg:item/solder_sucker/gui_1"
-    },
-    {
-      "predicate": {
-        "createsiammfg:charge": 1.0
-      },
-      "model": "createsiammfg:item/solder_sucker/gui_2"
-    }
-  ]
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "createsiammfg:item/solder_sucker/item_0"
+  }
 }

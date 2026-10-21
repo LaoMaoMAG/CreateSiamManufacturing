@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "createsiammfg:item/solder_sucker/item_2"
-  }
-}
