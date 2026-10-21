@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 吸锡器物品类
@@ -29,6 +30,11 @@ public class SolderSuckerItem extends Item {
      * 就绪状态数据键
      */
     private static final String READY_KEY = "SolderSuckerReady";
+
+    /**
+     * 发射状态数据键
+     */
+    private static final String FIRE_KEY = "SolderSuckerFire";
 
     public SolderSuckerItem(Properties properties) {
         super(properties);
@@ -57,18 +63,41 @@ public class SolderSuckerItem extends Item {
         });
     }
 
+    /**
+     * 是否已发射
+     *
+     * @param stack 吸锡器物品栈
+     * @return 是否已发射
+     */
+    public boolean isFire(ItemStack stack) {
+        return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean(FIRE_KEY);
+    }
+
+    /**
+     * 设置发射状态
+     *
+     * @param stack 吸锡器物品栈
+     * @param fire 是否已发射
+     */
+    public void setFire(ItemStack stack, boolean fire) {
+        CustomData.update(DataComponents.CUSTOM_DATA, stack, tag -> {
+            if (fire) tag.putBoolean(FIRE_KEY, true);
+            else tag.remove(FIRE_KEY);
+        });
+    }
+
     @Override
-    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+    public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
         return MAX_USE_TICKS;
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
+    public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.BOW;
     }
 
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+    @Override  @NotNull
+    public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
         if (isReady(stack)) {
             return InteractionResultHolder.pass(stack);
@@ -80,7 +109,7 @@ public class SolderSuckerItem extends Item {
     }
 
     @Override
-    public void onUseTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
+    public void onUseTick(Level level, @NotNull LivingEntity livingEntity, @NotNull ItemStack stack, int remainingUseDuration) {
         if (level.isClientSide || isReady(stack)) return;
         int chargeTicks = getUseDuration(stack, livingEntity) - remainingUseDuration;
         if (chargeTicks >= CHARGE_TICKS) setReady(stack, true);
