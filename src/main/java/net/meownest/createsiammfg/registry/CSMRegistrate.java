@@ -18,14 +18,16 @@ public class CSMRegistrate {
             .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
 
     public static void register(IEventBus modEventBus) {
+        // 注册事件监听器
+        REGISTRATE.registerEventListeners(modEventBus);
+
         // 注册方块
         CSMBlocks.register();
         // 注册方块实体
         CSMBlockEntities.register();
         // 注册物品
         CSMItems.register();
-        // 注册事件监听器
-        REGISTRATE.registerEventListeners(modEventBus);
+
         // 注册创造模式标签
         CSMCreativeModeTab.register(modEventBus);
         // 注册配方类型
