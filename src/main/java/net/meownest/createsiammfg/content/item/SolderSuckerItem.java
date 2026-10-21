@@ -24,7 +24,7 @@ public class SolderSuckerItem extends Item {
     /**
      * 蓄力时间
      */
-    public static final int CHARGE_TICKS = 40;
+    public static final int CHARGE_TICKS = 20;
 
     /**
      * 就绪状态数据键

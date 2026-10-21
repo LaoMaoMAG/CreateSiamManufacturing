@@ -69,13 +69,14 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
             return;
         }
 
-        float progress = getChargeProgress(stack);
-        float offset = progress * (4.0f / 16.0f);
-
-        ms.pushPose();
-        ms.translate(0.0, -offset, 0.0);
-        renderer.render(PUSH.get(), light);
-        ms.popPose();
+        if (!SolderSuckerItem.isFire(stack)){
+            float progress = getChargeProgress(stack);
+            float offset = progress * (3.5f / 16.0f);
+            ms.pushPose();
+            ms.translate(0.0, -offset, 0.0);
+            renderer.render(PUSH.get(), light);
+            ms.popPose();
+        }
 
         renderer.render(TUBE.get(), light);
     }
