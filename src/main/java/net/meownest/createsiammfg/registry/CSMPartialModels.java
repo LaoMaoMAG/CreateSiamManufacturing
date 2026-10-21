@@ -16,12 +16,12 @@ public class CSMPartialModels {
     /**
      * 吸锡器推杆
      */
-    public static final PartialModel SOLDER_SUCKER_PUSH = block("solder_sucker/push");
+    public static final PartialModel SOLDER_SUCKER_PUSH = item("solder_sucker/push");
 
     /**
      * 吸锡器圆筒
      */
-    public static final PartialModel SOLDER_SUCKER_TUBE = block("solder_sucker/tube");
+    public static final PartialModel SOLDER_SUCKER_TUBE = item("solder_sucker/tube");
 
     private static PartialModel block(String path) {
         return PartialModel.of(CreateSiamManufacturing.rl("block/" + path));
