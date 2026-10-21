@@ -32,12 +32,12 @@ import net.meownest.createsiammfg.content.item.SolderSuckerItem;
 @EventBusSubscriber(modid = CreateSiamManufacturing.MOD_ID, value = Dist.CLIENT)
 public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
 
-    protected static final PartialModel TUBE = CSMPartialModels.SOLDER_SUCKER_TUBE;
-    protected static final PartialModel PUSH = CSMPartialModels.SOLDER_SUCKER_PUSH;
-    protected static final PartialModel GUI_0 = CSMPartialModels.SOLDER_SUCKER_GUI_0;
-    protected static final PartialModel GUI_1 = CSMPartialModels.SOLDER_SUCKER_GUI_1;
-    protected static final PartialModel GUI_2 = CSMPartialModels.SOLDER_SUCKER_GUI_2;
-    protected static final PartialModel GUI_3 = CSMPartialModels.SOLDER_SUCKER_GUI_3;
+    private static final PartialModel TUBE = CSMPartialModels.SOLDER_SUCKER_TUBE;
+    private static final PartialModel PUSH = CSMPartialModels.SOLDER_SUCKER_PUSH;
+    private static final PartialModel GUI_0 = CSMPartialModels.SOLDER_SUCKER_GUI_0;
+    private static final PartialModel GUI_1 = CSMPartialModels.SOLDER_SUCKER_GUI_1;
+    private static final PartialModel GUI_2 = CSMPartialModels.SOLDER_SUCKER_GUI_2;
+    private static final PartialModel GUI_3 = CSMPartialModels.SOLDER_SUCKER_GUI_3;
 
     @SubscribeEvent
     @SuppressWarnings("unused")
