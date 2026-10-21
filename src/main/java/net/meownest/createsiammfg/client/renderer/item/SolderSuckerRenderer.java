@@ -31,6 +31,8 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
     protected static final PartialModel TUBE = CSMPartialModels.SOLDER_SUCKER_TUBE;
     protected static final PartialModel PUSH = CSMPartialModels.SOLDER_SUCKER_PUSH;
 
+    protected static final PartialModel GUI = CSMPartialModels.SOLDER_SUCKER_GUI;
+
     @SubscribeEvent
     @SuppressWarnings("unused")
     private static void register(RegisterClientExtensionsEvent event) {
@@ -49,6 +51,11 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
             int light,
             int overlay
     ) {
+        if (transformType == ItemDisplayContext.GUI){
+            renderer.render(GUI.get(), light);
+            return;
+        }
+
         float time = AnimationTickHolder.getRenderTime();
         float offset = (Mth.sin(time * 0.15f) + 1.0f) * 0.5f * (4.0f / 16.0f);
 

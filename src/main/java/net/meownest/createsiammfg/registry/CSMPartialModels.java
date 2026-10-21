@@ -23,6 +23,8 @@ public class CSMPartialModels {
      */
     public static final PartialModel SOLDER_SUCKER_TUBE = item("solder_sucker/tube");
 
+    public static final PartialModel SOLDER_SUCKER_GUI = item("solder_sucker/gui");
+
     private static PartialModel block(String path) {
         return PartialModel.of(CreateSiamManufacturing.rl("block/" + path));
     }
