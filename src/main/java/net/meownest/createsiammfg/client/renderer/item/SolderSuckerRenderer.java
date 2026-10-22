@@ -93,7 +93,7 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
     private static float getChargeProgress(ItemStack stack) {
         if (SolderSuckerItem.isReady(stack)) return 1.0f;
         LocalPlayer player = Minecraft.getInstance().player;
-        if (player == null || !player.isUsingItem() || player.getUseItem() != stack) return 0.0f;
+        if (player == null || !player.isUsingItem()) return 0.0f;
         float chargeTicks = player.getTicksUsingItem() + Mth.frac(AnimationTickHolder.getRenderTime());
         return Mth.clamp(chargeTicks / SolderSuckerItem.CHARGE_TICKS, 0.0f, 1.0f);
     }

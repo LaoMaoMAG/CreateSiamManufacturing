@@ -96,16 +96,35 @@ public class SolderSuckerItem extends Item {
         return UseAnim.BOW;
     }
 
-    @Override  @NotNull
+    /**
+     * 准备就绪时执行的使用
+     *
+     * @param level    环境
+     * @param player   玩家
+     * @param usedHand 使用的手
+     * @param stack    物品栈
+     */
+    private void performReadyUse(Level level, Player player, InteractionHand usedHand, ItemStack stack) {
+
+    }
+
+    @Override
+    @NotNull
     public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
+
+        // 已就绪 事件
         if (isReady(stack)) {
-            return InteractionResultHolder.pass(stack);
+            if (!level.isClientSide) {
+                performReadyUse(level, player, usedHand, stack);
+                setReady(stack, false);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
         }
-        else {
-            player.startUsingItem(usedHand);
-            return InteractionResultHolder.consume(stack);
-        }
+
+        // 未就绪 事件
+        player.startUsingItem(usedHand);
+        return InteractionResultHolder.consume(stack);
     }
 
     @Override
