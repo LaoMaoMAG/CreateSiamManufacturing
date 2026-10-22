@@ -19,7 +19,7 @@ import net.createmod.catnip.render.SuperByteBuffer;
 import dev.engine_room.flywheel.api.visualization.VisualizationManager;
 
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
-import net.meownest.createsiammfg.registry.CSMPartialModels;
+import net.meownest.createsiammfg.client.CSMPartialModels;
 
 public class MechanicalJuicerRenderer extends KineticBlockEntityRenderer<MechanicalJuicerBlockEntity> {
     public MechanicalJuicerRenderer(BlockEntityRendererProvider.Context context) {

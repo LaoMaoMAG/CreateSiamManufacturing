@@ -11,7 +11,7 @@ import com.simibubi.create.compat.jei.category.animations.AnimatedKinetics;
 import net.createmod.catnip.animation.AnimationTickHolder;
 
 import net.meownest.createsiammfg.registry.CSMBlocks;
-import net.meownest.createsiammfg.registry.CSMPartialModels;
+import net.meownest.createsiammfg.client.CSMPartialModels;
 
 /*
  * 榨汁机动画

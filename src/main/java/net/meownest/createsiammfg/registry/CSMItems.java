@@ -53,7 +53,13 @@ public class CSMItems {
      */
     public static final ItemEntry<SolderSuckerItem> SOLDER_SUCKER = REGISTRATE
             .item("solder_sucker", SolderSuckerItem::new)
-            .properties(p -> p.stacksTo(1))
+            .register();
+
+    /**
+     * 吸锡器推杆
+     */
+    public static final ItemEntry<Item> SOLDER_SUCKER_PUSH = REGISTRATE
+            .item("solder_sucker_push", Item::new)
             .register();
 
     /**

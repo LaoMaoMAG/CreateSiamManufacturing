@@ -1,5 +1,9 @@
 package net.meownest.createsiammfg.content.item;
 
+import net.minecraft.world.entity.EquipmentSlot;
+import org.jetbrains.annotations.NotNull;
+
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -10,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * 吸锡器物品类
@@ -27,6 +30,11 @@ public class SolderSuckerItem extends Item {
     public static final int CHARGE_TICKS = 20;
 
     /**
+     * 发射概率
+     */
+    public static final float FIRE_CHANCE = 0.05f;
+
+    /**
      * 就绪状态数据键
      */
     private static final String READY_KEY = "SolderSuckerReady";
@@ -37,7 +45,7 @@ public class SolderSuckerItem extends Item {
     private static final String FIRE_KEY = "SolderSuckerFire";
 
     public SolderSuckerItem(Properties properties) {
-        super(properties);
+        super(properties.durability(128));
     }
 
     /**
@@ -82,7 +90,10 @@ public class SolderSuckerItem extends Item {
     public static void setFire(ItemStack stack, boolean fire) {
         CustomData.update(DataComponents.CUSTOM_DATA, stack, tag -> {
             if (fire) tag.putBoolean(FIRE_KEY, true);
-            else tag.remove(FIRE_KEY);
+            else {
+                tag.remove(FIRE_KEY);
+                tag.remove(READY_KEY);
+            }
         });
     }
 
@@ -96,30 +107,43 @@ public class SolderSuckerItem extends Item {
         return UseAnim.BOW;
     }
 
-    /**
-     * 准备就绪时执行的使用
-     *
-     * @param level    环境
-     * @param player   玩家
-     * @param usedHand 使用的手
-     * @param stack    物品栈
-     */
-    private void performReadyUse(Level level, Player player, InteractionHand usedHand, ItemStack stack) {
+    private void damage(ItemStack stack, Player player, InteractionHand hand, int damage) {
+        EquipmentSlot slot = hand == InteractionHand.MAIN_HAND
+                ? EquipmentSlot.MAINHAND
+                : EquipmentSlot.OFFHAND;
 
+        stack.hurtAndBreak(damage, player, slot);
     }
 
     @Override
     @NotNull
     public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
+        RandomSource random = level.random;
+
+        if (isFire(stack)) return InteractionResultHolder.fail(stack);
 
         // 已就绪 事件
         if (isReady(stack)) {
+
             if (!level.isClientSide) {
-                performReadyUse(level, player, usedHand, stack);
-                setReady(stack, false);
+                if (player.isShiftKeyDown()) {
+                    setFire(stack, true);
+                    damage(stack, player, usedHand, 3);
+                }
+                else {
+                    if (random.nextFloat() < FIRE_CHANCE) {
+                        setFire(stack, true);
+                        damage(stack, player, usedHand, 3);
+                    }
+                    else {
+                        setReady(stack, false);
+                        damage(stack, player, usedHand, 1);
+                    }
+                }
             }
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+
         }
 
         // 未就绪 事件

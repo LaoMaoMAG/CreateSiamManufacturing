@@ -19,5 +19,6 @@
   "block.createsiammfg.mechanical_screening": "动力筛分机",
   "item.createsiammfg.hammer": "锤子",
   "item.createsiammfg.screwdriver": "螺丝刀",
-  "item.createsiammfg.spring": "弹簧"
+  "item.createsiammfg.spring": "弹簧",
+  "item.createsiammfg.solder_sucker_push": "吸锡器推杆"
 }

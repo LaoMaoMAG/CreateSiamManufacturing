@@ -5,7 +5,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
-import net.meownest.createsiammfg.registry.CSMPartialModels;
+import net.meownest.createsiammfg.client.CSMPartialModels;
 
 @Mod(value = CreateSiamManufacturing.MOD_ID, dist = Dist.CLIENT)
 public class CreateSiamManufacturingClient {

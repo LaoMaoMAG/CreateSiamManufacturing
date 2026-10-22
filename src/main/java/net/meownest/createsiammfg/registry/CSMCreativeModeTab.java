@@ -51,6 +51,7 @@ public class CSMCreativeModeTab {
                         .add(CSMItems.SOLDER_WIRE)
                         .add(CSMItems.ROSIN)
                         .add(CSMItems.SPRING)
+                        .add(CSMItems.SOLDER_SUCKER_PUSH)
         );
 
         // 机器

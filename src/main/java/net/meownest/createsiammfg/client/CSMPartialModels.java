@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.registry;
+package net.meownest.createsiammfg.client;
 
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 
@@ -27,6 +27,7 @@ public class CSMPartialModels {
     public static final PartialModel SOLDER_SUCKER_GUI_1 = item("solder_sucker/gui_1");
     public static final PartialModel SOLDER_SUCKER_GUI_2 = item("solder_sucker/gui_2");
     public static final PartialModel SOLDER_SUCKER_GUI_3 = item("solder_sucker/gui_3");
+    public static final PartialModel SOLDER_SUCKER_GUI_TUBE = item("solder_sucker/gui_tube");
 
     private static PartialModel block(String path) {
         return PartialModel.of(CreateSiamManufacturing.rl("block/" + path));

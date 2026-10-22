@@ -18,7 +18,7 @@ import dev.engine_room.flywheel.lib.model.Models;
 import dev.engine_room.flywheel.lib.visual.SimpleDynamicVisual;
 
 import net.meownest.createsiammfg.content.block.kinetics.juicer.MechanicalJuicerBlockEntity;
-import net.meownest.createsiammfg.registry.CSMPartialModels;
+import net.meownest.createsiammfg.client.CSMPartialModels;
 
 
 public class MechanicalJuicerVisual extends SingleAxisRotatingVisual<MechanicalJuicerBlockEntity> implements SimpleDynamicVisual  {
