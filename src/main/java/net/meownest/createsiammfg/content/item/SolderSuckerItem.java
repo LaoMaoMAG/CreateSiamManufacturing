@@ -1,5 +1,6 @@
 package net.meownest.createsiammfg.content.item;
 
+import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.minecraft.world.entity.EquipmentSlot;
 import org.jetbrains.annotations.NotNull;
 
@@ -71,6 +72,11 @@ public class SolderSuckerItem extends Item {
         });
     }
 
+    @Override
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        return oldStack.getItem() != newStack.getItem() || !slotChanged;
+    }
+
     /**
      * 是否已发射
      *
@@ -125,7 +131,6 @@ public class SolderSuckerItem extends Item {
 
         // 已就绪 事件
         if (isReady(stack)) {
-
             if (!level.isClientSide) {
                 if (player.isShiftKeyDown()) {
                     setFire(stack, true);
@@ -142,8 +147,8 @@ public class SolderSuckerItem extends Item {
                     }
                 }
             }
-            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
 
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
         }
 
         // 未就绪 事件

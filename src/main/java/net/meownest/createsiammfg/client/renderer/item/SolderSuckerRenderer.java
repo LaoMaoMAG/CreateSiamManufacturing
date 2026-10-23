@@ -31,14 +31,13 @@ import net.meownest.createsiammfg.content.item.SolderSuckerItem;
 
 @EventBusSubscriber(modid = CreateSiamManufacturing.MOD_ID, value = Dist.CLIENT)
 public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
-
     private static final PartialModel TUBE = CSMPartialModels.SOLDER_SUCKER_TUBE;
     private static final PartialModel PUSH = CSMPartialModels.SOLDER_SUCKER_PUSH;
     private static final PartialModel GUI_0 = CSMPartialModels.SOLDER_SUCKER_GUI_0;
     private static final PartialModel GUI_1 = CSMPartialModels.SOLDER_SUCKER_GUI_1;
     private static final PartialModel GUI_2 = CSMPartialModels.SOLDER_SUCKER_GUI_2;
     private static final PartialModel GUI_3 = CSMPartialModels.SOLDER_SUCKER_GUI_3;
-    private static final PartialModel GUI_TUBE  = CSMPartialModels.SOLDER_SUCKER_GUI_TUBE;
+    private static final PartialModel GUI_TUBE = CSMPartialModels.SOLDER_SUCKER_GUI_TUBE;
 
     @SubscribeEvent
     @SuppressWarnings("unused")
@@ -61,7 +60,7 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
         if (transformType == ItemDisplayContext.GUI) {
             BakedModel guiModel;
 
-            if (!SolderSuckerItem.isFire(stack)){
+            if (!SolderSuckerItem.isFire(stack)) {
                 int stage = SolderSuckerItem.isReady(stack) ? 3 : getChargeStage(stack);
                 guiModel = switch (stage) {
                     case 1 -> GUI_1.get();
@@ -69,14 +68,13 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
                     case 3 -> GUI_3.get();
                     default -> GUI_0.get();
                 };
-            }
-            else guiModel = GUI_TUBE.get();
+            } else guiModel = GUI_TUBE.get();
 
             renderer.render(guiModel, light);
             return;
         }
 
-        if (!SolderSuckerItem.isFire(stack)){
+        if (!SolderSuckerItem.isFire(stack)) {
             float progress = getChargeProgress(stack);
             float offset = progress * (3.5f / 16.0f);
             ms.pushPose();
@@ -90,7 +88,7 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
 
     private static int getChargeStage(ItemStack stack) {
         LocalPlayer player = Minecraft.getInstance().player;
-        if (player == null || !player.isUsingItem() || player.getUseItem() != stack) return 0;
+        if (player == null || player.getUseItem() != stack) return 0;
         int chargeTicks = player.getTicksUsingItem();
         if (chargeTicks >= SolderSuckerItem.CHARGE_TICKS) return 3;
         if (chargeTicks >= SolderSuckerItem.CHARGE_TICKS / 2) return 2;
@@ -98,9 +96,9 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
     }
 
     private static float getChargeProgress(ItemStack stack) {
-        if (SolderSuckerItem.isReady(stack)) return 1.0f;
         LocalPlayer player = Minecraft.getInstance().player;
-        if (player == null || !player.isUsingItem() || player.getUseItem() != stack) return 0.0f;
+        if (SolderSuckerItem.isReady(stack)) return 1.0f;
+        if (player == null || player.getUseItem() != stack) return 0.0f;
         float chargeTicks = player.getTicksUsingItem() + Mth.frac(AnimationTickHolder.getRenderTime());
         return Mth.clamp(chargeTicks / SolderSuckerItem.CHARGE_TICKS, 0.0f, 1.0f);
     }
