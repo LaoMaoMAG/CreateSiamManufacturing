@@ -1,9 +1,8 @@
 package net.meownest.createsiammfg.content.item;
 
-import net.meownest.createsiammfg.CreateSiamManufacturing;
-import net.minecraft.world.entity.EquipmentSlot;
 import org.jetbrains.annotations.NotNull;
 
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.util.RandomSource;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
@@ -23,7 +22,7 @@ public class SolderSuckerItem extends Item {
     /**
      * 最大使用时间
      */
-    public static final int MAX_USE_TICKS = 72000;
+    public static final int MAX_USE_TICKS = 7300;
 
     /**
      * 蓄力时间
@@ -74,7 +73,7 @@ public class SolderSuckerItem extends Item {
 
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
-        return oldStack.getItem() != newStack.getItem() || !slotChanged;
+        return oldStack.getItem() != newStack.getItem();
     }
 
     /**
@@ -103,6 +102,10 @@ public class SolderSuckerItem extends Item {
         });
     }
 
+    public void Fire() {
+
+    }
+
     @Override
     public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
         return MAX_USE_TICKS;
@@ -117,7 +120,6 @@ public class SolderSuckerItem extends Item {
         EquipmentSlot slot = hand == InteractionHand.MAIN_HAND
                 ? EquipmentSlot.MAINHAND
                 : EquipmentSlot.OFFHAND;
-
         stack.hurtAndBreak(damage, player, slot);
     }
 
@@ -160,6 +162,6 @@ public class SolderSuckerItem extends Item {
     public void onUseTick(Level level, @NotNull LivingEntity livingEntity, @NotNull ItemStack stack, int remainingUseDuration) {
         if (level.isClientSide || isReady(stack)) return;
         int chargeTicks = getUseDuration(stack, livingEntity) - remainingUseDuration;
-        if (chargeTicks >= CHARGE_TICKS) setReady(stack, true);
+        if (chargeTicks >= CHARGE_TICKS && !isReady(stack)) setReady(stack, true);
     }
 }

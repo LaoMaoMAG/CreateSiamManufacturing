@@ -1,6 +1,5 @@
 package net.meownest.createsiammfg.registry;
 
-import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 
@@ -8,6 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
+import net.meownest.createsiammfg.recipe.CSMRecipeTypes;
 import static net.meownest.createsiammfg.CreateSiamManufacturing.MOD_ID;
 
 /**
@@ -27,6 +27,8 @@ public class CSMRegistrate {
         CSMBlockEntities.register();
         // 注册物品
         CSMItems.register();
+        // 注册实体
+        CSMEntityTypes.register();
 
         // 注册创造模式标签
         CSMCreativeModeTab.register(modEventBus);
