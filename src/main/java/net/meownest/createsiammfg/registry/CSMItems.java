@@ -7,9 +7,10 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import net.meownest.createsiammfg.content.item.HammerItem;
-import net.meownest.createsiammfg.content.item.SolderSuckerItem;
+import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerItem;
 import net.meownest.createsiammfg.content.item.soldering_iron.SolderingIronItem;
 import net.meownest.createsiammfg.content.item.soldering_iron.ElectricSolderingIron;
+import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerPushItem;
 
 /**
  * CSM 物品注册表
@@ -58,8 +59,8 @@ public class CSMItems {
     /**
      * 吸锡器推杆
      */
-    public static final ItemEntry<Item> SOLDER_SUCKER_PUSH = REGISTRATE
-            .item("solder_sucker_push", Item::new)
+    public static final ItemEntry<SolderSuckerPushItem> SOLDER_SUCKER_PUSH = REGISTRATE
+            .item("solder_sucker_push", SolderSuckerPushItem::new)
             .register();
 
     /**

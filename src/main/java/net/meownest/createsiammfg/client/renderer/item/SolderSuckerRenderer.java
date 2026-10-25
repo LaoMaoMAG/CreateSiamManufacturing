@@ -27,7 +27,7 @@ import com.simibubi.create.foundation.item.render.CustomRenderedItemModelRendere
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.client.CSMPartialModels;
 import net.meownest.createsiammfg.registry.CSMItems;
-import net.meownest.createsiammfg.content.item.SolderSuckerItem;
+import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerItem;
 
 @EventBusSubscriber(modid = CreateSiamManufacturing.MOD_ID, value = Dist.CLIENT)
 public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {

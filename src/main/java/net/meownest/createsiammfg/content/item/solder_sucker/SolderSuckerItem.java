@@ -1,4 +1,4 @@
-package net.meownest.createsiammfg.content.item;
+package net.meownest.createsiammfg.content.item.solder_sucker;
 
 import org.jetbrains.annotations.NotNull;
 
