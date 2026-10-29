@@ -57,23 +57,38 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
             int light,
             int overlay
     ) {
-        if (transformType == ItemDisplayContext.GUI) {
-            BakedModel guiModel;
+        if (transformType == ItemDisplayContext.GUI)
+            guiRenderer(stack, renderer, light);
+        else
+            modelRenderer(stack, renderer, ms, light);
+    }
 
-            if (!SolderSuckerItem.isFire(stack)) {
-                int stage = SolderSuckerItem.isReady(stack) ? 3 : getChargeStage(stack);
-                guiModel = switch (stage) {
-                    case 1 -> GUI_1.get();
-                    case 2 -> GUI_2.get();
-                    case 3 -> GUI_3.get();
-                    default -> GUI_0.get();
-                };
-            } else guiModel = GUI_TUBE.get();
+    private void guiRenderer(
+            ItemStack stack,
+            PartialItemModelRenderer renderer,
+            int light
+    ) {
+        BakedModel guiModel;
 
-            renderer.render(guiModel, light);
-            return;
-        }
+        if (!SolderSuckerItem.isFire(stack)) {
+            int stage = SolderSuckerItem.isReady(stack) ? 3 : getChargeStage(stack);
+            guiModel = switch (stage) {
+                case 1 -> GUI_1.get();
+                case 2 -> GUI_2.get();
+                case 3 -> GUI_3.get();
+                default -> GUI_0.get();
+            };
+        } else guiModel = GUI_TUBE.get();
 
+        renderer.render(guiModel, light);
+    }
+
+    private void modelRenderer(
+            ItemStack stack,
+            PartialItemModelRenderer renderer,
+            PoseStack ms,
+            int light
+    ) {
         if (!SolderSuckerItem.isFire(stack)) {
             float progress = getChargeProgress(stack);
             float offset = progress * (3.5f / 16.0f);
@@ -82,7 +97,7 @@ public class SolderSuckerRenderer extends CustomRenderedItemModelRenderer {
             renderer.render(PUSH.get(), light);
             ms.popPose();
         }
-
+        
         renderer.render(TUBE.get(), light);
     }
 
