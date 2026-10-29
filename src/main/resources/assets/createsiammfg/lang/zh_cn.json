@@ -1,5 +1,6 @@
 {
   "itemGroup.createsiammfg.mod_tab": "机械动力：暹罗制造",
+
   "section.createsiammfg.tools": "工具",
   "section.createsiammfg.material": "材料",
   "section.createsiammfg.machine": "机器",
@@ -14,11 +15,14 @@
   "item.createsiammfg.solder_sucker": "吸锡器",
   "item.createsiammfg.solder_wire": "焊锡线",
   "item.createsiammfg.rosin": "松香",
-  "block.createsiammfg.engineers_workbench": "工程师加工台",
-  "block.createsiammfg.mechanical_juicer": "动力榨汁机",
-  "block.createsiammfg.mechanical_screening": "动力筛分机",
   "item.createsiammfg.hammer": "锤子",
   "item.createsiammfg.screwdriver": "螺丝刀",
   "item.createsiammfg.spring": "弹簧",
-  "item.createsiammfg.solder_sucker_push": "吸锡器推杆"
+  "item.createsiammfg.solder_sucker_push": "吸锡器推杆",
+
+  "block.createsiammfg.engineers_workbench": "工程师加工台",
+  "block.createsiammfg.mechanical_juicer": "动力榨汁机",
+  "block.createsiammfg.mechanical_screening": "动力筛分机",
+
+  "entity.createsiammfg.solder_sucker_push": "吸锡器推杆"
 }
