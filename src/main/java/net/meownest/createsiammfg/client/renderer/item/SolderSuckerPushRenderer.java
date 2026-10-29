@@ -2,11 +2,7 @@ package net.meownest.createsiammfg.client.renderer.item;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
-import dev.engine_room.flywheel.lib.model.baked.PartialModel;
-import net.meownest.createsiammfg.client.CSMPartialModels;
-import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerItem;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -16,6 +12,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+
 import com.simibubi.create.foundation.item.render.CustomRenderedItemModel;
 import com.simibubi.create.foundation.item.render.CustomRenderedItemModelRenderer;
 import com.simibubi.create.foundation.item.render.PartialItemModelRenderer;
@@ -23,6 +21,7 @@ import com.simibubi.create.foundation.item.render.SimpleCustomRenderer;
 
 import net.meownest.createsiammfg.CreateSiamManufacturing;
 import net.meownest.createsiammfg.registry.CSMItems;
+import net.meownest.createsiammfg.client.CSMPartialModels;
 
 @EventBusSubscriber(modid = CreateSiamManufacturing.MOD_ID, value = Dist.CLIENT)
 public class SolderSuckerPushRenderer extends CustomRenderedItemModelRenderer {

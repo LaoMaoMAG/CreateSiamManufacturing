@@ -1,5 +1,6 @@
 package net.meownest.createsiammfg.content.item.solder_sucker;
 
+import net.meownest.createsiammfg.content.entity.SolderSuckerPushEntity;
 import org.jetbrains.annotations.NotNull;
 
 import net.minecraft.world.entity.EquipmentSlot;
@@ -102,10 +103,6 @@ public class SolderSuckerItem extends Item {
         });
     }
 
-    public void Fire() {
-
-    }
-
     @Override
     public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
         return MAX_USE_TICKS;
@@ -136,11 +133,13 @@ public class SolderSuckerItem extends Item {
             if (!level.isClientSide) {
                 if (player.isShiftKeyDown()) {
                     setFire(stack, true);
+                    SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
                     damage(stack, player, usedHand, 3);
                 }
                 else {
                     if (random.nextFloat() < FIRE_CHANCE) {
                         setFire(stack, true);
+                        SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
                         damage(stack, player, usedHand, 3);
                     }
                     else {
