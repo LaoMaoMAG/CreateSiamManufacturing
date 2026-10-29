@@ -2,7 +2,11 @@ package net.meownest.createsiammfg.client.renderer.item;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+import net.meownest.createsiammfg.client.CSMPartialModels;
+import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerItem;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -22,13 +26,18 @@ import net.meownest.createsiammfg.registry.CSMItems;
 
 @EventBusSubscriber(modid = CreateSiamManufacturing.MOD_ID, value = Dist.CLIENT)
 public class SolderSuckerPushRenderer extends CustomRenderedItemModelRenderer {
+
+    private static final PartialModel PUSH = CSMPartialModels.SOLDER_SUCKER_PUSH;
+
+    private static final PartialModel GUI_PUSH = CSMPartialModels.SOLDER_SUCKER_GUI_PUSH;
+
     @SubscribeEvent
     @SuppressWarnings("unused")
     private static void register(RegisterClientExtensionsEvent event) {
         Item item = CSMItems.SOLDER_SUCKER_PUSH.asItem();
         event.registerItem(SimpleCustomRenderer.create(item, new SolderSuckerPushRenderer()), item);
     }
-
+    
     @Override
     protected void render(
             ItemStack stack,
@@ -40,6 +49,10 @@ public class SolderSuckerPushRenderer extends CustomRenderedItemModelRenderer {
             int light,
             int overlay
     ) {
-
+        if (transformType == ItemDisplayContext.GUI) {
+            renderer.render(GUI_PUSH.get(), light);
+            return;
+        }
+        renderer.render(PUSH.get(), light);
     }
 }
