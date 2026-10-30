@@ -85,14 +85,99 @@ public class SolderSuckerItem extends Item {
      * 设置发射状态
      *
      * @param stack 吸锡器物品栈
-     * @param fire 是否已发射
+     * @param fire  是否已发射
      */
     public static void setFire(ItemStack stack, boolean fire) {
         if (fire) {
             stack.set(CSMDataComponents.SOLDER_SUCKER_FIRE, true);
             stack.remove(CSMDataComponents.SOLDER_SUCKER_READY);
+        } else stack.remove(CSMDataComponents.SOLDER_SUCKER_FIRE);
+    }
+
+    /**
+     * 消耗耐久
+     *
+     * @param stack  物品栈
+     * @param player 玩家
+     * @param hand   手
+     * @param damage 伤害值
+     */
+    private void damage(ItemStack stack, Player player, InteractionHand hand, int damage) {
+        EquipmentSlot slot = hand == InteractionHand.MAIN_HAND
+                ? EquipmentSlot.MAINHAND
+                : EquipmentSlot.OFFHAND;
+        stack.hurtAndBreak(damage, player, slot);
+    }
+
+    /**
+     * 主动发射
+     *
+     * @param level  环境
+     * @param player 玩家
+     * @param usedHand 使用的手
+     */
+    private void activeFire(Level level, Player player, InteractionHand usedHand){
+        ItemStack stack = player.getItemInHand(usedHand);
+        setFire(stack, true);
+        SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
+        damage(stack, player, usedHand, 3);
+    }
+
+    /**
+     * 被动发射
+     */
+    @SuppressWarnings("unused")
+    private void passiveFire(){
+        /* TODO: 等待实现 */
+    }
+
+    public void readyUse(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
+        ItemStack stack = player.getItemInHand(usedHand);
+        RandomSource random = level.random;
+
+        if (level.isClientSide) return;
+
+        // 主动瞄准发射
+        if (player.isShiftKeyDown()) {
+            activeFire(level, player, usedHand);
+            return;
         }
-        else stack.remove(CSMDataComponents.SOLDER_SUCKER_FIRE);
+
+        // 概率被动发射
+        if (random.nextFloat() < FIRE_CHANCE) {
+            activeFire(level, player, usedHand);
+            return;
+        }
+
+        // 正常使用
+        setReady(stack, false);
+        damage(stack, player, usedHand, 1);
+    }
+
+    @Override
+    @NotNull
+    public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
+        ItemStack stack = player.getItemInHand(usedHand);
+
+        // 已发射 事件
+        if (isFire(stack)) return InteractionResultHolder.fail(stack);
+
+        // 已就绪 事件
+        if (isReady(stack)) {
+            readyUse(level, player, usedHand);
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+        }
+
+        // 未就绪 事件
+        player.startUsingItem(usedHand);
+        return InteractionResultHolder.consume(stack);
+    }
+
+    @Override
+    public void onUseTick(Level level, @NotNull LivingEntity livingEntity, @NotNull ItemStack stack, int remainingUseDuration) {
+        if (level.isClientSide || isReady(stack)) return;
+        int chargeTicks = getUseDuration(stack, livingEntity) - remainingUseDuration;
+        if (chargeTicks >= CHARGE_TICKS && !isReady(stack)) setReady(stack, true);
     }
 
     @Override
@@ -108,56 +193,5 @@ public class SolderSuckerItem extends Item {
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.BOW;
-    }
-
-    private void damage(ItemStack stack, Player player, InteractionHand hand, int damage) {
-        EquipmentSlot slot = hand == InteractionHand.MAIN_HAND
-                ? EquipmentSlot.MAINHAND
-                : EquipmentSlot.OFFHAND;
-        stack.hurtAndBreak(damage, player, slot);
-    }
-
-    @Override
-    @NotNull
-    public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
-        ItemStack stack = player.getItemInHand(usedHand);
-        RandomSource random = level.random;
-
-        if (isFire(stack)) return InteractionResultHolder.fail(stack);
-
-        // 已就绪 事件
-        if (isReady(stack)) {
-            if (!level.isClientSide) {
-                if (player.isShiftKeyDown()) {
-                    setFire(stack, true);
-                    SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
-                    damage(stack, player, usedHand, 3);
-                }
-                else {
-                    if (random.nextFloat() < FIRE_CHANCE) {
-                        setFire(stack, true);
-                        SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
-                        damage(stack, player, usedHand, 3);
-                    }
-                    else {
-                        setReady(stack, false);
-                        damage(stack, player, usedHand, 1);
-                    }
-                }
-            }
-
-            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
-        }
-
-        // 未就绪 事件
-        player.startUsingItem(usedHand);
-        return InteractionResultHolder.consume(stack);
-    }
-
-    @Override
-    public void onUseTick(Level level, @NotNull LivingEntity livingEntity, @NotNull ItemStack stack, int remainingUseDuration) {
-        if (level.isClientSide || isReady(stack)) return;
-        int chargeTicks = getUseDuration(stack, livingEntity) - remainingUseDuration;
-        if (chargeTicks >= CHARGE_TICKS && !isReady(stack)) setReady(stack, true);
     }
 }
