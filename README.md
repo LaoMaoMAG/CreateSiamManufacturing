@@ -1,25 +1,50 @@
+# 机械动力：暹罗工业  Create Siam Manufacturing (CSM)
 
-Installation information
-=======
+用于 Minecraft《暹罗工艺》整合包的 Create 机器拓展模组
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+> 当前模组正在早期开发阶段
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## 模组介绍
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+本模组为拓展 Create 的加工体系设计，计划添加新的机器，工具和加工配方等。但该模组本身并不提供完整的加工线，主要用于整合包作者的魔改（或者说是专门为作者自己的包开发的）
+
+
+
+### 支持版本
+
+| 项目        | 版本        |
+| --------- | --------- |
+| Minecraft | 1.21.1    |
+| NeoForge  | 21.1.250+ |
+| Create    | 6.0.10    |
+| JEI       | 19.54.0+  |
+
+该模组没有兼容 1.21.1 以外 Minecraft 版本和 NeoForge 以外加载器的计划。
+
+
+
+### 已有内容
+
+> 目前懒得写，当然目前也没有什么完成度，感兴趣自己编译（
+
+
+
+## KubeJS 集成
+
+> 未来计划支持
+
+
+
+## 许可证
+
+- 源代码采用 [MIT](LICENSE)
+- 模型、贴图、等资源目前正在临时替代，不完全保证拥有许可（不会美术）
+
+
+
+### 使用的项目
+
+- [Create](https://github.com/Creators-of-Create/Create)： 参考和复制 Create 的部分代码，并使用了部分资源和模型
+- [CreateCraftedBeginning](https://github.com/BadPig03/CreateCraftedBeginning)： 参考和复制 CCB 的部分代码
