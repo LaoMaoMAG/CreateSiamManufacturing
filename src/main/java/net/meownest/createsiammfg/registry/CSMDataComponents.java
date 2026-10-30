@@ -1,16 +1,18 @@
 package net.meownest.createsiammfg.registry;
 
+import java.util.function.UnaryOperator;
+import org.jetbrains.annotations.NotNull;
+
 import com.mojang.serialization.Codec;
-import net.meownest.createsiammfg.CreateSiamManufacturing;
+
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.codec.ByteBufCodecs;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.function.UnaryOperator;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import net.meownest.createsiammfg.CreateSiamManufacturing;
 
 public class CSMDataComponents {
     public static final DeferredRegister<DataComponentType<?>> COMPONENTS = DeferredRegister
