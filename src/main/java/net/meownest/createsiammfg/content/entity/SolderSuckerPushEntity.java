@@ -17,7 +17,7 @@ import net.meownest.createsiammfg.registry.CSMItems;
 public class SolderSuckerPushEntity extends AbstractArrow {
     private static final float DEFAULT_SIZE = 0.3125F;
 
-    private ItemStack itemStack;
+    private final ItemStack itemStack;
 
     @Contract(" -> new")
     private static ItemStack getDefaultItem() {
@@ -27,9 +27,9 @@ public class SolderSuckerPushEntity extends AbstractArrow {
     public SolderSuckerPushEntity(EntityType<SolderSuckerPushEntity> entityType, Level level) {
         super(entityType, level);
         itemStack = getDefaultItem();
-
     }
 
+    @SuppressWarnings("unused")
     public SolderSuckerPushEntity(Level level, LivingEntity owner, ItemStack pickupStack, ItemStack weapon) {
         super(CSMEntityTypes.SOLDER_SUCKER_PUSH.get(), owner, level, pickupStack, weapon);
         itemStack = getDefaultItem();

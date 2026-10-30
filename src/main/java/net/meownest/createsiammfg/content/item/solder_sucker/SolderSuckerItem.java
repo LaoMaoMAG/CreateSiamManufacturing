@@ -1,6 +1,7 @@
 package net.meownest.createsiammfg.content.item.solder_sucker;
 
 import net.meownest.createsiammfg.content.entity.SolderSuckerPushEntity;
+import net.meownest.createsiammfg.registry.CSMDataComponents;
 import org.jetbrains.annotations.NotNull;
 
 import net.minecraft.world.entity.EquipmentSlot;
@@ -56,7 +57,7 @@ public class SolderSuckerItem extends Item {
      * @return 是否准备就绪
      */
     public static boolean isReady(ItemStack stack) {
-        return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean(READY_KEY);
+        return stack.getOrDefault(CSMDataComponents.SOLDER_SUCKER_READY, false);
     }
 
     /**
@@ -66,15 +67,8 @@ public class SolderSuckerItem extends Item {
      * @param ready 是否准备就绪
      */
     public static void setReady(ItemStack stack, boolean ready) {
-        CustomData.update(DataComponents.CUSTOM_DATA, stack, tag -> {
-            if (ready) tag.putBoolean(READY_KEY, true);
-            else tag.remove(READY_KEY);
-        });
-    }
-
-    @Override
-    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
-        return oldStack.getItem() != newStack.getItem();
+        if (ready) stack.set(CSMDataComponents.SOLDER_SUCKER_READY, true);
+        else stack.remove(CSMDataComponents.SOLDER_SUCKER_READY);
     }
 
     /**
@@ -84,7 +78,7 @@ public class SolderSuckerItem extends Item {
      * @return 是否已发射
      */
     public static boolean isFire(ItemStack stack) {
-        return stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean(FIRE_KEY);
+        return stack.getOrDefault(CSMDataComponents.SOLDER_SUCKER_FIRE, false);
     }
 
     /**
@@ -94,13 +88,16 @@ public class SolderSuckerItem extends Item {
      * @param fire 是否已发射
      */
     public static void setFire(ItemStack stack, boolean fire) {
-        CustomData.update(DataComponents.CUSTOM_DATA, stack, tag -> {
-            if (fire) tag.putBoolean(FIRE_KEY, true);
-            else {
-                tag.remove(FIRE_KEY);
-                tag.remove(READY_KEY);
-            }
-        });
+        if (fire) {
+            stack.set(CSMDataComponents.SOLDER_SUCKER_FIRE, true);
+            stack.remove(CSMDataComponents.SOLDER_SUCKER_READY);
+        }
+        else stack.remove(CSMDataComponents.SOLDER_SUCKER_FIRE);
+    }
+
+    @Override
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        return oldStack.getItem() != newStack.getItem();
     }
 
     @Override

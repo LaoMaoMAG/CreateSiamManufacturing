@@ -29,6 +29,8 @@ public class CSMRegistrate {
         CSMItems.register();
         // 注册实体
         CSMEntityTypes.register();
+        // 注册数据组件
+        CSMDataComponents.register(modEventBus);
 
         // 注册创造模式标签
         CSMCreativeModeTab.register(modEventBus);
