@@ -244,3 +244,6 @@ idea {
         downloadJavadoc = true
     }
 }
+
+// 猫只是添加了一个依赖，就被 Gradle 打断了双腿
+// O.o => https://www.bilibili.com/video/BV1JmzZYvEHz
