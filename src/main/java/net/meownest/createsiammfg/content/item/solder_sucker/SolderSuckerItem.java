@@ -33,7 +33,7 @@ public class SolderSuckerItem extends Item {
     /**
      * 发射概率
      */
-    public static final float FIRE_CHANCE = 0.05f;
+    public static final float FIRE_CHANCE = 0.5f;
 
     public SolderSuckerItem(Properties properties) {
         super(properties.durability(128));
@@ -99,25 +99,26 @@ public class SolderSuckerItem extends Item {
     }
 
     /**
-     * 主动发射
+     * 发射
      *
-     * @param level  环境
-     * @param player 玩家
-     * @param usedHand 使用的手
+     * @param level     环境
+     * @param player    玩家
+     * @param usedHand  使用的手
+     * @param isPassive 是否被动发射
      */
-    private void activeFire(Level level, Player player, InteractionHand usedHand){
+    private void fire(Level level, Player player, InteractionHand usedHand, boolean isPassive) {
         ItemStack stack = player.getItemInHand(usedHand);
-        setFire(stack, true);
-        SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
-        damage(stack, player, usedHand, 3);
-    }
 
-    /**
-     * 被动发射
-     */
-    @SuppressWarnings("unused")
-    private void passiveFire(){
-        /* TODO: 等待实现 */
+        setFire(stack, true);
+        damage(stack, player, usedHand, 3);
+
+        if (isPassive) {
+            SolderSuckerPushEntity.shoot(level, player, -90.0F, 0.0F, 2.0F, 0.0F);
+            player.hurt(player.damageSources().generic(), 1.0F);
+            return;
+        }
+
+        SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
     }
 
     public void readyUse(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
@@ -128,13 +129,13 @@ public class SolderSuckerItem extends Item {
 
         // 主动瞄准发射
         if (player.isShiftKeyDown()) {
-            activeFire(level, player, usedHand);
+            fire(level, player, usedHand, false);
             return;
         }
 
         // 概率被动发射
         if (random.nextFloat() < FIRE_CHANCE) {
-            activeFire(level, player, usedHand);
+            fire(level, player, usedHand, true);
             return;
         }
 

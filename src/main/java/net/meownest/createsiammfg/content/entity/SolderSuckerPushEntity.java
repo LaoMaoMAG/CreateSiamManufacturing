@@ -49,11 +49,15 @@ public class SolderSuckerPushEntity extends AbstractArrow {
     }
 
     public static void shoot(Level level, LivingEntity shooter, float velocity, float inaccuracy) {
+        shoot(level, shooter, shooter.getXRot(), shooter.getYRot(), velocity, inaccuracy);
+    }
+
+    public static void shoot(Level level, LivingEntity shooter, float xRot, float yRot, float velocity, float inaccuracy) {
         if (level.isClientSide) return;
         SolderSuckerPushEntity projectile = new SolderSuckerPushEntity(CSMEntityTypes.SOLDER_SUCKER_PUSH.get(), level);
         projectile.setOwner(shooter);
         projectile.setPos(shooter.getX(), shooter.getEyeY() - 0.1D, shooter.getZ());
-        projectile.shootFromRotation(shooter, shooter.getXRot(), shooter.getYRot(), 0.0F, velocity, inaccuracy);
+        projectile.shootFromRotation(shooter, xRot, yRot, 0.0F, velocity, inaccuracy);
         level.addFreshEntity(projectile);
     }
 }
