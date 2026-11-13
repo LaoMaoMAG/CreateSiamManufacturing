@@ -33,7 +33,7 @@ public class SolderSuckerItem extends Item {
     /**
      * 发射概率
      */
-    public static final float FIRE_CHANCE = 0.5f;
+    public static final float FIRE_CHANCE = 0.05f;
 
     public SolderSuckerItem(Properties properties) {
         super(properties.durability(128));
@@ -100,11 +100,6 @@ public class SolderSuckerItem extends Item {
 
     /**
      * 发射
-     *
-     * @param level     环境
-     * @param player    玩家
-     * @param usedHand  使用的手
-     * @param isPassive 是否被动发射
      */
     private void fire(Level level, Player player, InteractionHand usedHand, boolean isPassive) {
         ItemStack stack = player.getItemInHand(usedHand);
@@ -121,7 +116,10 @@ public class SolderSuckerItem extends Item {
         SolderSuckerPushEntity.shoot(level, player, 3.0F, 0.0F);
     }
 
-    public void readyUse(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
+    /**
+     * 准备就绪使用
+     */
+    private void readyUse(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
         RandomSource random = level.random;
 
@@ -144,13 +142,31 @@ public class SolderSuckerItem extends Item {
         damage(stack, player, usedHand, 1);
     }
 
+    /**
+     * 装弹
+     */
+    private void ammunitionLoading(@NotNull Level level, Player player, @NotNull InteractionHand usedHand){
+
+    }
+
+    /**
+     * 是否允许装弹
+     */
+    private boolean isAllowAmmunitionLoading(@NotNull Level level, Player player, @NotNull InteractionHand usedHand){
+        return false;
+    }
+
     @Override
     @NotNull
     public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
 
         // 已发射 事件
-        if (isFire(stack)) return InteractionResultHolder.fail(stack);
+        if (isFire(stack)) {
+            if (!isAllowAmmunitionLoading(level, player, usedHand)) return InteractionResultHolder.fail(stack);
+            ammunitionLoading(level, player, usedHand);
+            return InteractionResultHolder.success(stack);
+        }
 
         // 已就绪 事件
         if (isReady(stack)) {

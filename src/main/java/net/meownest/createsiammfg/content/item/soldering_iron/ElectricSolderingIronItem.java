@@ -5,8 +5,8 @@ import net.minecraft.world.item.Item;
 /**
  * 电烙铁物品类
  */
-public class ElectricSolderingIron extends Item {
-    public ElectricSolderingIron(Properties properties) {
+public class ElectricSolderingIronItem extends Item {
+    public ElectricSolderingIronItem(Properties properties) {
         super(properties);
     }
 }

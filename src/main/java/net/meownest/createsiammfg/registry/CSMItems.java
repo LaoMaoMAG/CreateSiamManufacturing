@@ -9,7 +9,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.meownest.createsiammfg.content.item.HammerItem;
 import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerItem;
 import net.meownest.createsiammfg.content.item.soldering_iron.SolderingIronItem;
-import net.meownest.createsiammfg.content.item.soldering_iron.ElectricSolderingIron;
+import net.meownest.createsiammfg.content.item.soldering_iron.ElectricSolderingIronItem;
 import net.meownest.createsiammfg.content.item.solder_sucker.SolderSuckerPushItem;
 
 /**
@@ -36,8 +36,8 @@ public class CSMItems {
     /**
      * 电烙铁
      */
-    public static final ItemEntry<ElectricSolderingIron> ELECTRIC_SOLDERING_IRON = REGISTRATE
-            .item("electric_soldering_iron", ElectricSolderingIron::new)
+    public static final ItemEntry<ElectricSolderingIronItem> ELECTRIC_SOLDERING_IRON = REGISTRATE
+            .item("electric_soldering_iron", ElectricSolderingIronItem::new)
             .properties(p -> p.stacksTo(1))
             .register();
 
