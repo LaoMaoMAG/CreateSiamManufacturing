@@ -1,5 +1,6 @@
 package net.meownest.createsiammfg.registry;
 
+import com.simibubi.create.infrastructure.config.CStress;
 import net.meownest.createsiammfg.content.block.workbench.EngineersWorkbenchBlock;
 import net.minecraft.world.level.material.MapColor;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -31,7 +32,6 @@ public class CSMBlocks {
             .transform(axeOrPickaxe())
             .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
             .item(AssemblyOperatorBlockItem::new)
-             // .removeTab(CreativeModeTabs.SEARCH)
             .transform(customItemModel())
             .register();
 

@@ -1,8 +1,12 @@
 package net.meownest.createsiammfg.content.block.workbench;
 
+import java.util.List;
+
+import net.meownest.createsiammfg.foundation.CSMLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -12,10 +16,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public class EngineersWorkbenchBlockEntity extends BlockEntity {
+import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 
-    private final ItemStackHandler inventory = new ItemStackHandler(1) {
-
+public class EngineersWorkbenchBlockEntity extends BlockEntity implements IHaveGoggleInformation{
+    private final ItemStackHandler inventory = new ItemStackHandler(5) {
         @Override
         public int getSlotLimit(int slot) {
             return slot == 0 ? 1 : 0;
@@ -70,6 +74,13 @@ public class EngineersWorkbenchBlockEntity extends BlockEntity {
 
     public IItemHandler getItemHandler() {
         return inventory;
+    }
+
+    @Override
+    public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking){
+        CSMLang.translate("gui.engineers_workbench.title").forGoggles(tooltip);
+        CSMLang.translate("gui.engineers_workbench.held_item").add(getHeldItem().getDisplayName()).forGoggles(tooltip);
+        return true;
     }
 
     @Override

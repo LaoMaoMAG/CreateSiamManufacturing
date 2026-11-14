@@ -24,5 +24,8 @@
   "block.createsiammfg.mechanical_juicer": "动力榨汁机",
   "block.createsiammfg.mechanical_screening": "动力筛分机",
 
-  "entity.createsiammfg.solder_sucker_push": "吸锡器推杆"
+  "entity.createsiammfg.solder_sucker_push": "吸锡器推杆",
+
+  "createsiammfg.gui.engineers_workbench.title": "加工台工作信息：",
+  "createsiammfg.gui.engineers_workbench.held_item": "持有物品："
 }
